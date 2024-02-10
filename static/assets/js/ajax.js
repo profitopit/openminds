@@ -1,44 +1,50 @@
 $(document).ready(function(){
-    $('#registerForm').on('submit', function(e) {
-        e.preventDefault();
+    $('#registerBtn').on('click', function(e) {
         
         // Disable the button and show loading state
         $('#registerBtn').prop('disabled', true).html('<span class="spinner-border text-white spinner-border-sm" role="status" aria-hidden="true"></span> Registering...');
     
-        $.ajax({
-            type: 'POST',
-            url: '/user/sign-up/',  // Update with your register view URL
-            data: $(this).serialize(),
-            success: function(response) {
-                if (response.success) {
-                    // Registration success
-                    window.location.href = '/';
-                    // You may want to redirect or update the page content here
-                } else {
-                    // Registration failure
+        // $.ajax({
+        //     type: 'POST',
+        //     url: '/user/sign-up/',  // Update with your register view URL
+        //     data: $(this).serialize(),
+        //     success: function(response) {
+        //         if (response.success) {
+        //             // Registration success
+        //             window.location.href = '/';
+        //             // You may want to redirect or update the page content here
+        //         } else {
+        //             // Registration failure
                     
-                    const errorObj = JSON.parse(response.errors);
+        //             const errorObj = JSON.parse(response.errors);
                 
 
-                    const message = (errorObj.username && errorObj.username[0].message) || (errorObj.email && errorObj.email[0].message);
-
-                    $("#SignUpErrorMessage").html(`<span class="text-danger" id="LoginErrorMessage"> ${message}</span>`);
-                    setTimeout(() => {
-                        $("#SignUpErrorMessage").text("");
-                    }, 5000);
-                }
-            },
-            error: function(error) {
-                // Handle error
+        //             const message = (errorObj.username && errorObj.username[0].message) || (errorObj.email && errorObj.email[0].message);
+        //             if (message === undefined){
+        //                 $("#SignUpErrorMessage").html(`<span class="text-danger" id="LoginErrorMessage">Input a secure password</span>`);
+        //                 setTimeout(() => {
+        //                     $("#SignUpErrorMessage").text("");
+        //                 }, 5000);
+        //             }else{
+                        
+        //                 $("#SignUpErrorMessage").html(`<span class="text-danger" id="LoginErrorMessage"> ${message}</span>`);
+        //                 setTimeout(() => {
+        //                     $("#SignUpErrorMessage").text("");
+        //                 }, 5000);
+        //             }
+        //         }
+        //     },
+        //     error: function(error) {
+        //         // Handle error
                 
-                // Clear the error message
+        //         // Clear the error message
                
-            },
-            complete: function() {
-                // Re-enable the button and restore its original text
-                $('#registerBtn').prop('disabled', false).html('Register');
-            }
-        });
+        //     },
+        //     complete: function() {
+        //         // Re-enable the button and restore its original text
+        //         $('#registerBtn').prop('disabled', false).html('Register');
+        //     }
+        // });
     });
     
 

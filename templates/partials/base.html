@@ -58,7 +58,7 @@
                             {% if request.user.is_authenticated %}
                             <a class="theme-btn">{{request.user|truncatechars:7}}</a>
                             {% else %}
-                            <a href="{% url "core:contact" %}" class="theme-btn">Contact</a>
+                            <a href="{% url "core:contact" %}" class="theme-btn d-none d-sm-block" >Contact</a>
                             {% endif %}
                             <span class="menu-bar" style="background: transparent;">
                                 <i class="las la-bars"></i>
@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="mega-menu-item">
-                                    <a  class="nav-link-color" style="cursor: pointer;">Portfolio</a>
+                                    <a  class="nav-link-color" style="cursor: pointer;">Engage</a>
                                     <span class="dropdown-menu-item-icon">
                                         <i class="las la-angle-down"></i>
                                     </span>
@@ -95,7 +95,7 @@
                                                            
                                                             <div class="content-box">
                                                                 <h3><a href="{% url "core:blogs" %}">Blog</a></h3>
-                                                                <p>we undertook a project to <br>migrate their existing.
+                                                                <p>Dive into our collection of articles <br> curated to help you succeed and thrive.
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -103,73 +103,32 @@
                                                             
                                                             <div class="content-box">
                                                                 <h3><a href="{% url "core:events" %}">Events</a></h3>
-                                                                <p>The mobile application has <br>significantly
-                                                                    improved.</p>
+                                                                <p>Stay updated on upcoming events, RSVP to secure your spot, <br> and connect with like-minded individuals who share your interests and passions.</p>
                                                             </div>
                                                         </div>
-                                                        <div class="mega-menu-portfolio-card">
-                                                            
-                                                            <div class="content-box">
-                                                                <h3><a href="portfolio-details.html">SAAS Integration</a></h3>
-                                                                <p>We partnered with DEF to <br>upgrade their outdated
-                                                                    IT.</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mega-menu-portfolio-card">
-                                                            
-                                                            <div class="content-box">
-                                                                <h3><a href="portfolio-details.html">Virtual Reality</a></h3>
-                                                                <p>Enter into the virtual reality <br>
-                                                                    world for real experience.</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mega-menu-portfolio-card">
-                                                            
-                                                            <div class="content-box">
-                                                                <h3><a href="portfolio-details.html">Virtual Reality</a></h3>
-                                                                <p>Enter into the virtual reality <br>
-                                                                    world for real experience.</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mega-menu-portfolio-card">
-                                                            
-                                                            <div class="content-box">
-                                                                <h3><a href="portfolio-details.html">Virtual Reality</a></h3>
-                                                                <p>Enter into the virtual reality <br>
-                                                                    world for real experience.</p>
-                                                            </div>
-                                                        </div>
+                                             
                                                     </div>
 
                                                     <div
                                                         class="mega-meu-footer d-flex align-items-center justify-content-between w-full">
                                                         <ul class="mega-menu-social d-flex align-items-center">
-                                                            <li><a href="#"><i class="iconoir-dribbble"></i></a></li>
                                                             <li><a href="#"><i class="iconoir-twitter"></i></a></li>
                                                             <li><a href="#"><i class="iconoir-instagram"></i></a></li>
                                                             <li><a href="#"><i class="iconoir-linkedin"></i></a></li>
                                                         </ul>
 
                                                         <p>
-                                                            <a href="portfolio.html">View Portfolio 
+                                                            <a href="{% url "core:events" %}">Engage in events
                                                                 <i class="iconoir-arrow-up-right"></i></a>
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="right">
-                                                    <div class="mega-menu-ads">
-                                                        <img src="{% static 'assets/imgs/macbook.jpg' %}" alt="iPad" />
-                                                        <h2>Mobile app for a new era</h2>
-                                                        <p>Download slack in your mobile for <br>
-                                                            your daily usage.</p>
-                                                        <a href="case-studie-single.html">View more</a>
-                                                    </div>
-                                                </div>
+                                               
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li >
                                     <a href="{% url "core:contact" %}" class="nav-link-color">Contact</a>
                                 </li>
                                 {% if request.user.is_authenticated %}
@@ -199,11 +158,12 @@
                     <div class="header-right">
                         <div class="header-contact-info d-flex align-items-center">
                             <div class="phone-number">
-                                <a href="tel:+1-938-740-7555">
+                                <a href="tel:+2348089421545">
                                     Call Us 
                                     <i class="iconoir-arrow-up-right"></i>   
                                 </a>
-                                +1-938-740-7555
+                                +234-808-9421-545
+                                
                             </div>
                             {% if request.user.is_authenticated %}
                             <a class="theme-btn">{{request.user|truncatechars:12}}</a>
@@ -309,8 +269,7 @@
                     <div class="footer-contact-info-item">
                         <h4>Phone</h4>
                         <p>
-                            <a href="tel:+1-455-1482-236">+1-455-1482-236</a> <br>
-                            <a href="tel:+1-938-740-75556">+1-938-740-7555</a>
+                            <a href="tel:+2348089421545">+234-808-9421-545</a>
                         </p>
                     </div>
                     <div class="footer-contact-info-item">

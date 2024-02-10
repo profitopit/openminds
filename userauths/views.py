@@ -16,11 +16,12 @@ def send_email_async(email_data):
 
 
 def register_view(request):
-    if request.method == "POST" and request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
+    form = UserRegisterForm()
+    if request.method == "POST":
         form = UserRegisterForm(request.POST or None)
         if form.is_valid():
             
-            new_user = form.save()
+            form.save()
             username = form.cleaned_data.get("username")
             email = form.cleaned_data.get("email")
             new_user = authenticate(username=form.cleaned_data['email'],
@@ -42,7 +43,7 @@ def register_view(request):
           <tbody>
             <tr>
               <td valign="top" align="center" style="font-family:Google Sans,Roboto,Helvetica,Arial sans-serif;font-size:36px;font-weight:500;line-height:44px;color:#202124;padding:40px 40px 0px 40px;letter-spacing:-0.31px">
-              <img src="https://openmindsinc.org/static/imgs/openminds-full.png" style="border-radius: 15px;" height="200"/>
+              <img src="https://openmindsinc.org/static/assets/logo/openminds-full.png" style="border-radius: 15px;" height="100"/>
                 </td>
             </tr>
             
@@ -78,7 +79,7 @@ def register_view(request):
             
              <tr>
               <td valign="top" align="center" style="font-family:Google Sans,Roboto,Helvetica,Arial sans-serif;font-size:36px;font-weight:500;line-height:44px;color:#202124;padding:40px 40px 0px 40px;letter-spacing:-0.31px; border-radius: 5px;">
-              <img src="https://openmindsinc.org/static/imgs/openminds-mini.png" height="100"/>
+              <img src="https://openmindsinc.org/static/assets/logo/openminds-mini.png" height="50"/>
                 </td>
             </tr>
             <tr>
@@ -102,13 +103,10 @@ def register_view(request):
             # Create a thread to send the email asynchronously
             email_thread = threading.Thread(target=send_email_async, args=(email_data,))
             email_thread.start()
-            return JsonResponse({'success': True, 'message': f"Hey {username}, account created successfully"})
-        else:
-            errors = form.errors.as_json()
-            return JsonResponse({'success': False, 'errors': errors})
-
-    form = UserRegisterForm()
-    context = {'form': form}
+            return redirect("core:index")
+    context = {
+        'form': form,
+    }
     return render(request, 'userauths/sign-up.html', context)
 
 
