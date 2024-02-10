@@ -5,11 +5,10 @@ from userauths.models import Contact
 from userauths.countries import COUNTRIES
 from django.core.validators import MinLengthValidator
 class UserRegisterForm(UserCreationForm):
-    first_name = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Your Name","class": "form-control","id":"first_name"}))
-    last_name = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Your Name","class": "form-control","id":"last_name"}))
+    full_name = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Your Name","class": "form-control","id":"first_name"}))
     country = forms.ChoiceField(choices=COUNTRIES, widget=forms.Select(attrs={"class": "form-control ","id":"homeland"}))
     username = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Username"}))
-    email = forms.EmailField(widget=forms.EmailInput(attrs={"placeholder": "Email"}))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={"placeholder": "emma@gmail.com"}))
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "Password"}))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "Confirm Password"}))
     class Meta:

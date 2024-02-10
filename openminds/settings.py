@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-s4r3$a=w27gbvq7@e6#f+4uxm2zz_&5=*ln1s4!ibq(9@4lwu^"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -79,9 +79,13 @@ WSGI_APPLICATION = "openminds.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres.bqbitfmmuubbnlsaqmjt',
+        'PASSWORD': 'xp6Kn9j93HdylHUv',
+        'HOST': 'aws-0-eu-central-1.pooler.supabase.com',
+        'PORT': '5432',
     }
 }
 
@@ -146,3 +150,5 @@ CKEDITOR_CONFIGS = {
         'extraPlugins': ','.join(['codesnippet', 'widget', 'dialog','clipboard',]),
     }
 }
+
+SENSITIVE_VARIABLE = "re_3vZfcxaJ_45XDuvLBkraKu6jWq5hGd87Q"
