@@ -1,0 +1,1111 @@
+{% extends "partials/base.html" %}
+{% load static %}
+{% block title %}{% endblock title %}
+{% block MainContent %}
+
+        <!-- Hero -->
+        <section class="hero-empowerment-area">
+            <div class="custom-container">
+                <div class="custom-row align-items-center">
+                    <div class="hero-empowerment-left-content">
+                        <h5 class="section-subtitle">HAVEN OF POSSIBILITIES</h5>
+                        <h1 class="section-title fade-in">Solving problems and Research is what we do.</h1>
+                        <p>We provide the support and solutions to empower your business.</p>
+                        <div class="btns-group d-flex">
+                            <a href="{% url "userauths:sign-up" %}" class="theme-btn">Join Us</a>
+                            <a href="{% url "core:contact" %}" class="theme-btn2">Let's Talk
+                                <i class="iconoir-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero-empowerment-right-content">
+                        <div class="top-content">
+                            <img class="desktop fade-in" src="{% static 'assets/imgs/bg001.jpg' %}" alt="Empowerment" />
+                            <img class="mobile" src="{% static 'assets/imgs/bg1.png' %}" alt="Empowerment" />
+
+                            <div class="experience-box simple-shadow bounce-in">
+                                <div class="experience-body d-flex align-items-center">
+                                    <img src="{% static 'assets/imgs/icon1.svg' %}" alt="Icon" />
+
+                                    <div class="experience-content d-flex align-items-center">
+                                        <h1>+8</h1>
+                                        <p>
+                                            Years
+                                            <span>Experience</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-content d-flex">
+                            <a href="team.html" class="our-expert-team-box simple-shadow bounce-in delay-2">
+                                <div class="our-expert-team-box-inner d-flex align-items-center">
+                                    <div class="imgs imgs1 d-flex align-items-center">
+                                        <img src="{% static 'assets/imgs/small-img-4.png' %}" alt="team" />
+                                        <img src="{% static 'assets/imgs/small-img-3.png' %}" alt="team" />
+                                        <img src="{% static 'assets/imgs/small-img-2.png' %}" alt="team" />
+                                        <img src="{% static 'assets/imgs/small-img-1.png' %}" alt="team" />
+                                    </div>
+                                    <p>
+                                        Meet
+                                        <span>Our Experts</span>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <div class="google-reviews-box simple-shadow bounce-in delay-3">
+                                <div class="left">
+                                    <span>Trusted by</span>
+                                    <img src="{% static 'assets/imgs/icon2.svg' %}" alt="Google" />
+                                </div>
+                                <div class="right">
+                                    <div class="stars d-flex align-items-center">
+                                        <i class="las la-star"></i>
+                                        <i class="las la-star"></i>
+                                        <i class="las la-star"></i>
+                                        <i class="las la-star"></i>
+                                        <i class="las la-star"></i>
+                                    </div>
+                                    <p>
+                                        3245
+                                        <span>Reviews</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="custom-container " id="contactSection">
+
+                <div class="hero-contact-form-wrap" >
+                    <div class="hero-contact-form-inner-wrap">
+                        <div class="mt-5">
+
+                            <div class="hero-contact-form-header d-flex align-items-center justify-content-between">
+                                <p>You can contact us anytime via <a href="mailto:openmindsinc@gmail.com">openmindsinc@gmail.com</a></p>
+
+                                
+                            </div>
+
+                            <div class="hero-contact-form">
+                                <form action="" method="POST" class="contact-form d-flex">
+                                    <div class="input-main-row">
+                                        <div class="input-row">
+                                            <div class="input-group">
+                                                <label for="first_name">First Name</label>
+                                                <input type="text" placeholder="First Name" id="first_name" name="first_name"/>
+                                            </div>
+                                            <div class="input-group">
+                                                <label for="last_name">Last Name</label>
+                                                <input type="text" placeholder="Last Name" id="last_name" name="last_name"/>
+                                            </div>
+                                        </div>
+                                        <div class="input-row">
+                                            <div class="input-group">
+                                                <label for="email">Email</label>
+                                                <input type="email" placeholder="Your Email" id="email" name="email"/>
+                                            </div>
+                                        </div>
+                                        <div class="input-row">
+                                            <div class="input-group">
+                                               
+                                                <label for="business_name">Business Name</label>
+                                                <input type="text" name="business_name" placeholder="Your Business Name" />
+                                            </div>
+                                            <div class="input-group">
+                                                <label for="country">Country</label>
+                                                <input type="text" name="country" placeholder="Your Country" />
+                                            </div>
+                                        </div>
+                                        <div class="input-row">
+                                            <div class="input-group">
+                                                <label>What's the type of your company?</label>
+                                                <div class="choice-a-company flex-wrap d-flex">
+                                                    
+                                                    <div class="radio-box">
+                                                        <input type="radio" id="education" name="choice_company" value="Education"/>
+                                                        <label for="education">Education</label>
+                                                    </div>
+                                                    <div class="radio-box">
+                                                        <input type="radio" id="business" name="choice_company" value="Business"/>
+                                                        <label for="business">Business</label>
+                                                    </div>
+                                                    <div class="radio-box">
+                                                        <input type="radio" id="agency" name="choice_company" value="Agency"/>
+                                                        <label for="agency">Agency</label>
+                                                    </div>
+                                                    <div class="radio-box">
+                                                        <input type="radio" id="saas" name="choice_company" value="SAAS"/>
+                                                        <label for="saas">SAAS</label>
+                                                    </div>
+                                                    <div class="radio-box">
+                                                        <input type="radio" id="other" name="choice_company" value="Other"/>
+                                                        <label for="other">Other</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-row">
+                                            <div class="input-group">
+                                                <label>What do you need from us?</label>
+                                                <div class="feedback-checkboxes d-flex flex-wrap">
+                                                    <div class="feedback-item">
+                                                        <input type="checkbox" id="app_design" name="services[]" value="Project management"/>
+                                                        <label for="app_design">Project management</label>
+                                                    </div>
+                                                    <div class="feedback-item">
+                                                        <input type="checkbox" id="web_design" name="services[]" value="Research Management"/>
+                                                        <label for="web_design">Research Management</label>
+                                                    </div>
+                                                    <div class="feedback-item">
+                                                        <input type="checkbox" id="branding" name="services[]" value="Educational Consultancy"/>
+                                                        <label for="branding">Educational Consultancy</label>
+                                                    </div>
+                                                    <div class="feedback-item">
+                                                        <input type="checkbox" id="development" name="services[]" value="Psychological Studies"/>
+                                                        <label for="development">Psychological Studies</label>
+                                                    </div>
+                                                    <div class="feedback-item">
+                                                        <input type="checkbox" id="cloud_service" name="services[]" value="Event Planning/Management"/>
+                                                        <label for="cloud_service">Event Planning/Management</label>
+                                                    </div>
+                                                    <div class="feedback-item">
+                                                        <input type="checkbox" id="other" name="services[]" value="Project Monitoring/Supervision"/>
+                                                        <label for="other">Project Monitoring/Supervision</label>
+                                                    </div>
+                                                    <div class="feedback-item">
+                                                        <input type="checkbox" id="other" name="services[]" value="Other"/>
+                                                        <label for="other">Other</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-main-row">
+                                        <div class="input-row">
+                                            <div class="input-group">
+                                                <label for="message">Message</label>
+                                                <textarea name="message" id="message" placeholder="Leave us a message...."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="input-row">
+                                            <div class="input-group">
+                                                <label for="budget">Budget</label>
+                                                <input id="pi_input" type="range" min="0" max="200" step="1" style="padding: 0;" name="budget" />
+                                                <div class="budget-values d-flex align-items-center justify-content-between w-full">
+                                                    <div class="left-value">$<span id="budget-value">300</span>k</div>
+                                                    <div class="right-value">$200k</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-row">
+                                            <div class="input-group input-checkbox">
+                                                <input type="checkbox" id="privacy_policy_accept" name="privacy_policy_accept" value="1">
+                                                <label for="privacy_policy_accept">Click the box and agree to our <a href="#">terms and conditions.</a></a></label>
+                                            </div>
+                                        </div>
+                                        <div class="input-row">
+                                            <div class="input-group">
+                                                <button class="theme-btn" id="submit">Get Started</button>
+                                            </div>
+                                        </div>
+                                        <!-- Alert Message -->
+                                        <div class="input-row">
+                                            <div class="input-group alert-notification">
+                                                <div id="alert-message" class="alert-msg"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Client Section -->
+
+
+
+        <!-- Services -->
+        <section class="service2-area">
+            <img class="bg-shape" src="{% static 'assets/imgs/bg-shape-7.svg' %}" alt="Shape"/>
+            <div class="custom-container">
+                <div class="custom-row">
+                    <div class="service2-header d-flex align-items-center justify-content-between w-full">
+                        <div class="left">
+                            <h5 class="section-subtitle">OUR SERVICES</h5>
+                            <h1 class="section-title">We provide best services</h1>
+                            <p>Enhancing Business Efficiency with Premier Solutions.</p>
+                        </div>
+
+                        <a href="{% url "core:blogs" %}" class="theme-btn">
+                            Learn More 
+                            <i class="iconoir-arrow-up-right"></i> 
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service2-items d-flex w-full">
+                    <div class="service2-card card-h">
+                        <img src="{% static 'assets/imgs/project_manage.jpg' %}" class="rounded-2" style="width: 241.6px; height: 128px;" alt="Service" />
+                        <h2>Project Management</h2>
+                        <p>Stay ahead of the curve <br>
+                            in-depth market analysis.</p>
+                        <a href="#contactSection" class="theme-btn">
+                            <i class="iconoir-arrow-up-right"></i> 
+                        </a>
+                    </div>
+                    <div class="service2-card card-h">
+                        <img src="{% static 'assets/imgs/research_manage.jpg' %}" class="rounded-2" style="width: 241.6px; height: 128px;" alt="Service" />
+                        <h2>Research Management</h2>
+                        <p>We have a best team for <br>
+                            your shopping websites.</p>
+                        <a href="#contactSection" class="theme-btn">
+                            <i class="iconoir-arrow-up-right"></i> 
+                        </a>
+                    </div>
+                    <div class="service2-card card-h">
+                        <img src="{% static 'assets/imgs/education.jpg' %}"  style="width: 241.6px; height: 128px;" alt="Service" />
+                        <h2>Educational Consultancy</h2>
+                        <p>Navigating organizational <br>
+                            change can be complex.</p>
+                        <a href="#contactSection" class="theme-btn">
+                            <i class="iconoir-arrow-up-right"></i> 
+                        </a>
+                    </div>
+                    <div class="service2-card card-h">
+                        <img src="{% static 'assets/imgs/psychology.jpg' %}" class="rounded-2" style="width: 241.6px; height: 128px;" alt="Service" />
+                        <h2>Psychological Studies</h2>
+                        <p>We create vibrant, intuitive <br>
+                            and minimalist branding</p>
+                        <a href="#contactSection" class="theme-btn">
+                            <i class="iconoir-arrow-up-right"></i>  
+                        </a>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-24 service2-bottom-2-col">
+                    <div class="service3-card d-flex flex-1 card-h">
+                        <img src="{% static 'assets/imgs/event_planning.jpg' %}" alt="Service"/>
+                        <div class="service3-body">
+                            <div class="service3-content">
+                                <h3 style="font-size: 20px;">Event Planning/Management</h3>
+                                <p>Success require a proactive strategic <br>
+                                    approach to business development.</p>
+                                <ul>
+                                    <li><i class="las la-check"></i> Customized Growth</li>
+                                    <li><i class="las la-check"></i> Market Penetration</li>
+                                </ul>
+                                <a href="#contactSection" class="theme-btn">
+                                    <i class="iconoir-arrow-up-right"></i>  
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service3-card d-flex flex-1 card-h">
+                        <img src="{% static 'assets/imgs/project_supervision.jpg' %}" alt="Service"/>
+                        <div class="service3-body">
+                            <div class="service3-content">
+                                <h3 style="font-size: 20px;">Project Monitoring/Supervision</h3>
+                                <p>We are your partners <br>
+                                    in today's markets</p>
+                                <ul>
+                                    <li><i class="las la-check"></i> Industry Insights</li>
+                                    <li><i class="las la-check"></i> Optimize Resources</li>
+                                </ul>
+                                <a href="#contactSection" class="theme-btn">
+                                    <i class="iconoir-arrow-up-right"></i>  
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about2-area">
+            <div class="custom-container">
+                <div class="about2-inner-box">
+
+                    <div class="about2-header">
+                        <h5 class="section-subtitle">SPECIALIZATION</h5>
+                        <h1 class="section-title">What should we do for you</h1>
+                    </div>
+                    
+                    <ul class="nav nav-tabs about2-tabs" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" id="business_strategy-tab" data-bs-toggle="tab" href="#business_strategy"
+                                role="tab" aria-controls="business_strategy" aria-selected="true">
+                                <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-1.svg' %}" alt="Icon"/></span> Project Management
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="market_analysis-tab" data-bs-toggle="tab" href="#market_analysis" role="tab"
+                                aria-controls="market_analysis" aria-selected="false">
+                                <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-4.svg' %}" alt="Icon"/></span> Research Management
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="process_optimation-tab" data-bs-toggle="tab" href="#process_optimation" role="tab"
+                                aria-controls="process_optimation" aria-selected="false">
+                                <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-6.svg' %}" alt="Icon"/></span> Event Planning/Management
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="performance_improvement-tab" data-bs-toggle="tab" href="#performance_improvement" role="tab"
+                                aria-controls="performance_improvement" aria-selected="false">
+                                <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-2.svg' %}" alt="Icon"/></span> Educational Consultancy
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="entrepreneurial_guidance-tab" data-bs-toggle="tab" href="#entrepreneurial_guidance" role="tab"
+                                aria-controls="entrepreneurial_guidance" aria-selected="false">
+                                <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-3.svg' %}" alt="Icon"/></span> Project Monitoring/Supervision
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="psychology_guidance-tab" data-bs-toggle="tab" href="#psychology_guidance" role="tab"
+                                aria-controls="psychology_guidance" aria-selected="false">
+                                <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-5.svg' %}" alt="Icon"/></span> Psychological Studies
+                            </button>
+                        </li>
+                        
+                    </ul>
+
+
+                    <div class="tab-content about2-tab-content">
+                        <div class="tab-pane fade show active" id="business_strategy" role="tabpanel" aria-labelledby="business_strategy-tab">
+                            <div class="about2-tab-content-body d-flex gap-24">
+                                <div class="img-box">
+                                    <img src="{% static 'assets/imgs/project_manage.jpg' %}" style="width: 450px;" alt="About"/>
+                                </div>
+
+                                <div class="content-box card-h">
+                                    <div class="mac-btns-wrap d-flex align-items-center justify-content-between">
+                                        <div class="mac-buttons d-flex align-items-center">
+                                       
+                                        </div>
+            
+                                        <div class="action-btn d-flex align-items-center">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <h1>
+                                        <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-1.svg' %}" alt="Icon"/></span> Transforming Goals Into Reality
+                                    </h1>
+                                    <div class="content">
+                                        <p>Open Mind Inc. are ever ready to plan and carry out projects, we are open for contracts and project study as we are connected to professionals for your tasks</p>
+                                       
+                                    </div>
+                                    <a href="#contactSection" class="theme-btn">
+                                        <i class="iconoir-arrow-up-right"></i> 
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="market_analysis" role="tabpanel" aria-labelledby="market_analysis-tab">
+                            <div class="about2-tab-content-body d-flex gap-24">
+                                <div class="img-box">
+                                    <img src="{% static 'assets/imgs/research_manage.jpg' %}" alt="About"/>
+                                </div>
+
+                                <div class="content-box card-h">
+                                    <div class="mac-btns-wrap d-flex align-items-center justify-content-between">
+                                        <div class="mac-buttons d-flex align-items-center">
+                                       
+                                        </div>
+            
+                                        <div class="action-btn d-flex align-items-center">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <h1>
+                                        <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-4.svg' %}" alt="Icon"/></span> Transforming Goals Into Reality
+                                    </h1>
+                                    <div class="content">
+                                        <p>Open Mind Inc. are ever ready to plan and carry out projects, we are open for contracts and project study as we are connected to professionals for your tasks</p>
+                                       
+                                    </div>
+                                    <a href="#contactSection" class="theme-btn">
+                                        <i class="iconoir-arrow-up-right"></i> 
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="process_optimation" role="tabpanel" aria-labelledby="process_optimation-tab">
+                            <div class="about2-tab-content-body d-flex gap-24">
+                                <div class="img-box">
+                                    <img src="{% static 'assets/imgs/event_planning.jpg' %}" alt="About"/>
+                                </div>
+
+                                <div class="content-box card-h">
+                                    <div class="mac-btns-wrap d-flex align-items-center justify-content-between">
+                                        <div class="mac-buttons d-flex align-items-center">
+                                         
+                                        </div>
+            
+                                        <div class="action-btn d-flex align-items-center">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <h1>
+                                        <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-6.svg' %}" alt="Icon"/></span> Event Planning/Management
+                                    </h1>
+                                    <div class="content">
+                                        <p>We also handle well coordinated handling of events making sure that we meet desired operations of our customers</p>
+                                        
+                                    </div>
+                                    <a href="#contactSection" class="theme-btn">
+                                        <i class="iconoir-arrow-up-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <div class="tab-pane fade" id="performance_improvement" role="tabpanel" aria-labelledby="performance_improvement-tab">
+                            <div class="about2-tab-content-body d-flex gap-24">
+                                <div class="img-box">
+                                    <img src="{% static 'assets/imgs/education.jpg' %}" alt="About"/>
+                                </div>
+
+                                <div class="content-box card-h">
+                                    <div class="mac-btns-wrap d-flex align-items-center justify-content-between">
+                                        <div class="mac-buttons d-flex align-items-center">
+                                           
+                                        </div>
+            
+                                        <div class="action-btn d-flex align-items-center">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <h1>
+                                        <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-2.svg' %}" alt="Icon"/></span> Igniting minds, not just classrooms
+                                    </h1>
+                                    <div class="content">
+                                        <p>In Open Minds, we are interested in sessions, interviews and seminar on educational issues and reasonable ways of of solving them with a push for easier learning.</p>
+                                      
+                                    </div>
+                                    <a href="#contactSection" class="theme-btn">
+                                        <i class="iconoir-arrow-up-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="entrepreneurial_guidance" role="tabpanel" aria-labelledby="entrepreneurial_guidance-tab">
+                            <div class="about2-tab-content-body d-flex gap-24">
+                                <div class="img-box">
+                                    <img src="{% static 'assets/imgs/project_supervision.jpg' %}" alt="About"/>
+                                </div>
+
+                                <div class="content-box card-h">
+                                    <div class="mac-btns-wrap d-flex align-items-center justify-content-between">
+                                        <div class="mac-buttons d-flex align-items-center">
+                                            
+                                        </div>
+            
+                                        <div class="action-btn d-flex align-items-center">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <h1>
+                                        <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-3.svg' %}" alt="Icon"/></span> Boost accountability, unlock team potential
+                                    </h1>
+                                    <div class="content">
+                                        <p>Just in case of incovenience and incapabiliities of project teams in your organization, we can put in measures to improve disciplines of your project.</p>
+                                        
+                                    </div>
+                                    <a href="#contactSection" class="theme-btn">
+                                        <i class="iconoir-arrow-up-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="psychology_guidance" role="tabpanel" aria-labelledby="psychology_guidance-tab">
+                            <div class="about2-tab-content-body d-flex gap-24">
+                                <div class="img-box">
+                                    <img src="{% static 'assets/imgs/psychology.jpg' %}" alt="About"/>
+                                </div>
+
+                                <div class="content-box card-h">
+                                    <div class="mac-btns-wrap d-flex align-items-center justify-content-between">
+                                        <div class="mac-buttons d-flex align-items-center">
+                                            
+                                        </div>
+            
+                                        <div class="action-btn d-flex align-items-center">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <h1>
+                                        <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-3.svg' %}" alt="Icon"/></span> Boost accountability, unlock team potential
+                                    </h1>
+                                    <div class="content">
+                                        <p>Just in case of incovenience and incapabiliities of project teams in your organization, we can put in measures to improve disciplines of your project.</p>
+                                        
+                                    </div>
+                                    <a href="#contactSection" class="theme-btn">
+                                        <i class="iconoir-arrow-up-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Feature -->
+        <section class="feature2-area">
+            <img src="{% static 'assets/imgs/bg-shape-feature.svg' %}" alt="Shape" class="bg-shape" />
+            <div class="custom-container">
+                <div class="custom-row">
+                    <div class="feature2-content">
+                        <div class="feature2-header">
+                            <h5 class="section-subtitle">CONSULTING EXCELLENCE</h5>
+                            <h1 class="section-title">Build a solution that <br>
+                                wins you more clients.</h1>
+                        </div>
+
+                        <div class="feature2-content-body d-flex flex-wrap">
+                            <div class="feature2-card">
+                                <span class="icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-1.svg' %}" alt="Icon"/>
+                                </span>
+                                <h3>Customized Solutions</h3>
+                                <p>Crafting tailored solutions designed to captivate your target audience and drive client acquisition.</p>
+                            </div>
+                            <div class="feature2-card">
+                                <span class="icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-4.svg' %}" alt="Icon"/>
+                                </span>
+                                <h3>Elevate your business</h3>
+                                <p>Elevate your business presence with innovative strategies that resonate with potential clients.</p>
+                            </div>
+                            <div class="feature2-card">
+                                <span class="icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-3.svg' %}" alt="Icon"/>
+                                </span>
+                                <h3>Client retention</h3>
+                                <p>Deliver standout experiences that compel clients to choose your brand over competitors.</p>
+                            </div>
+                            <div class="feature2-card">
+                                <span class="icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-2.svg' %}" alt="Icon"/>
+                                </span>
+                                <h3>Implement solutions</h3>
+                                <p>Empower your business growth by implementing solutions that establish trust and loyalty among clients.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature2-img-box">
+                        <div class="feature2-img-box-inner ">
+                            <div class="mac-btns-wrap d-flex align-items-center justify-content-between">
+                                <div class="mac-buttons d-flex align-items-center">
+                                   
+                                </div>
+    
+                                <div class="action-btn d-flex align-items-center">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+
+                            <img src="{% static 'assets/imgs/laptop-study.jpg' %}" height="550" alt="a man researching"/>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- News -->
+        <section class="news2-area">
+            <div class="custom-container">
+                <div class="section-header d-flex align-items-center justify-content-between">
+                    <div class="left">
+                        <h5 class="section-subtitle">DAILY NEWS</h5>
+                        <h1 class="section-title">Read more about daily insights</h1>
+                        <p>In a fast-paced world where information shapes, our daily news service is your informed about the latest developments</p>
+                    </div>
+                    
+                    <a href="{% url "core:blogs" %}" class="theme-btn">
+                        Learn More 
+                        <i class="iconoir-arrow-up-right"></i>
+                    </a>
+                </div>
+
+                <div class="news2-lists d-flex">
+                    {% for blog in blogs %}
+                    <div class="news2-card card-h">
+                        <img src="{{blog.image.url}}" alt="Blog"/>
+                        <div class="news2-card-body">
+                            <div class="meta">
+                                <span class="date">{{blog.date|date:"d M, Y"}}</span>
+                                {% comment %} <a href="blog-details.html" class="category">#Travel</a> {% endcomment %}
+                            </div>
+                            <h2><a href="{% url "core:blog-detail" blog.bid %}">{{blog.blog_title}}</a></h2>
+                            <p>{{blog.description|truncatechars:"120"|safe}}</p>
+                            <a href="{% url "core:blog-detail" blog.bid %}" class="theme-btn">
+                                <i class="iconoir-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="news2-sticky news2-card d-flex card-h">
+                    {% for event in events %}
+                    <img src="{% static 'assets/imgs/bg-shape-blog-sticky.svg' %}" alt="Shape" class="bg-shape"/>
+                    <img src="{{event.image.url}}" alt="Event"/>
+                    <div class="news2-card-body">
+                        <div class="meta">
+                            <span class="date">{{event.date|date:"d M, Y"}}</span>
+                            <a href="#" class="category">#Technology</a>
+                        </div>
+                        <h2><a href="{% url "core:event-detail" event.eid %}">{{event.main_page_title}}</a></h2>
+                        <p>{{event.description|truncatechars:"120"|safe}}</p>
+                        <a href="{% url "core:event-detail" event.eid %}" class="theme-btn">
+                            <i class="iconoir-arrow-up-right"></i>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Portfolio -->
+        <section class="portoflio-area">
+            <img src="{% static 'assets/imgs/bg-shape-9.svg' %}" alt="Shape" class="bg-shape"/>
+            <div class="custom-container">
+                <div class="section-header d-flex align-items-end justify-content-between">
+                    <div class="left">
+                        <h5 class="section-subtitle">PORTFOLIO</h5>
+                        <h1 class="section-title">Explore more about our <br> business</h1>
+                    </div>
+                    
+                    <p>Where we proudly present a collection of our finest accomplishments and success stories. Each project represents a collaborative journey with our clients, dedication, and a commitment to excellence.</p>
+                </div>
+
+                <div class="portfolio-lists d-flex w-full gap-24">
+                    <div class="portfolio-col">
+
+                        <div class="portfolio-card portfolio-card-1 card-h">
+                            <div class="portfolio-img">
+                                <img src="{% static 'assets/imgs/portfolio-1.jpg' %}" alt="Portfolio"/>
+                            </div>
+                            <div class="portfolio-body">
+                                <h2><a href="#">Work <br>
+                                    consulting.</a></h2>
+                                <p>We have a best team for 
+                                    your consulting service.</p>
+                                <a href="#" class="theme-btn">
+                                    <i class="iconoir-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card portfolio-card-2 card-h">
+                            <div class="portfolio-body">
+                                <h2><a href="#">Take a <br>
+                                    architecture <br>
+                                    photography</a></h2>
+                                <p>We have best photographers in our digital studio.</p>
+                                <a href="#" class="theme-btn">
+                                    <i class="iconoir-arrow-up-right"></i>
+                                </a>
+                            </div>
+                            <div class="portfolio-img">
+                                <img src="{% static 'assets/imgs/portfolio-2.jpg' %}" alt="Portfolio"/>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="portfolio-col">
+
+                        <div class="portfolio-card portfolio-card-2 card-h">
+                            <div class="portfolio-body">
+                                <h2><a href="#">Take a <br>
+                                    architecture <br>
+                                    photography</a></h2>
+                                <p>We have a best team for your branding studio.</p>
+                                <a href="#" class="theme-btn">
+                                    <i class="iconoir-arrow-up-right"></i>
+                                </a>
+                            </div>
+                            <div class="portfolio-img">
+                                <img src="{% static 'assets/imgs/portfolio-3.jpg' %}" alt="Portfolio"/>
+                            </div>
+                        </div>
+                        <div class="portfolio-card portfolio-card-1 card-h">
+                            <div class="portfolio-img">
+                                <img src="{% static 'assets/imgs/portfolio-4.jpg' %}" alt="Portfolio"/>
+                            </div>
+                            <div class="portfolio-body">
+                                <h2><a href="#">Work <br>
+                                    consulting.</a></h2>
+                                <p>We have a best team for <br>
+                                    your consulting service.</p>
+                                <a href="#" class="theme-btn">
+                                    <i class="iconoir-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="portfolio-col">
+
+                        <div class="portfolio-card portfolio-card-1 card-h">
+                            <div class="portfolio-img">
+                                <img src="{% static 'assets/imgs/portfolio-5.jpg' %}" alt="Portfolio"/>
+                            </div>
+                            <div class="portfolio-body">
+                                <h2><a href="#">Game <br>
+                                    branding.</a></h2>
+                                <p>Our best team for bring <br>
+                                    your market to new era.</p>
+                                <a href="#" class="theme-btn">
+                                    <i class="iconoir-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portfolio-card portfolio-card-2 card-h">
+                            <div class="portfolio-body">
+                                <h2><a href="#">Take a <br>
+                                    architecture</a></h2>
+                                <p>Explore your ideas with us to improve.</p>
+                                <a href="#" class="theme-btn">
+                                    <i class="iconoir-arrow-up-right"></i>
+                                </a>
+                            </div>
+                            <div class="portfolio-img">
+                                <img src="{% static 'assets/imgs/portfolio-6.jpg' %}" alt="Portfolio"/>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-social-card">
+                            <ul class="d-flex align-items-center">
+                                <li>
+                                    <a href="#"><i class="iconoir-dribbble"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="iconoir-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="iconoir-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="iconoir-linkedin"></i></a>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+{% comment %}
+            <!-- Our Team -->
+            <section class="our-team-area">
+                <div class="custom-container">
+                    <div class="section-header d-flex align-items-end justify-content-between w-full">
+                        <div class="left">
+                            <h5 class="section-subtitle">OUR TEAM</h5>
+                            <h1 class="section-title">Our team consists of<br> world class experts</h1>
+                        </div>
+                        
+                        <p>We are proud to introduce you to the talented individuals who make up our consultancy's backbone, each contributing their unique skills and wealth of experience to drive transformative results.</p>
+                    </div>
+    
+    
+                    <div class="our-teams-list">
+                        <div class="our-team-box d-flex" id="first-box">
+                            <div class="img-box">
+                                <img src="{% static 'assets/imgs/team-2.jpg' %}" alt="Team"/>
+                            </div>
+                            <div class="our-team-body card-h">
+                                <div class="mac-btns-wrap d-flex align-items-center justify-content-between">
+                                    <div class="mac-buttons d-flex align-items-center">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+        
+                                    <div class="action-btn d-flex align-items-center">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+    
+                                <div class="our-team-body-inner">
+                                    <div class="our-team-personal-details">
+                                        <h3 class="name">
+                                            <span class="icon"><i class="las la-user"></i></span> Henderson Mario
+                                        </h3>
+                                        <h3 class="web-design">
+                                            <span class="icon"><i class="las la-vector-square"></i></span> Web Designer
+                                        </h3>
+                                        <h3 class="location">
+                                            <span class="icon"><i class="las la-map-marker"></i></span> Melbourne, AUS
+                                        </h3>
+                                        <h3 class="experience">
+                                            <span class="icon"><i class="lar la-star"></i></span> 7 Years Experience
+                                        </h3>
+                                    </div>
+                                    <div class="our-team-bio">
+                                        <p>In the ever-evolving landscape of business, are in robust and well defined strategies is the compassing that guides your journey to success. At Strategic Business Solutions, we specialize in crafting business strategies that go beyond mere plans. They are blueprints for growth, innovation, solution and enduring compassing that prosperity. At Strategic Business Solutions.</p>
+                                    </div>
+                                    <a href="team.html" class="theme-btn">
+                                        <i class="iconoir-arrow-up-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="our-team-box our-team-box2 d-flex">
+                            <div class="img-box">
+                                <img src="{% static 'assets/imgs/team-1.jpg' %}" alt="Team"/>
+                            </div>
+                            <div class="our-team-body card-h">
+                                <div class="mac-btns-wrap d-flex align-items-center justify-content-between">
+                                    <div class="mac-buttons d-flex align-items-center">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+        
+                                    <div class="action-btn d-flex align-items-center">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="our-team-body-inner">
+                                    <div class="our-team-personal-details">
+                                        <h3 class="name">
+                                            <span class="icon"><i class="las la-user"></i></span> Annie Coral
+                                        </h3>
+                                        <h3 class="web-design">
+                                            <span class="icon"><i class="las la-vector-square"></i></span> Business Analyst
+                                        </h3>
+                                        <h3 class="location">
+                                            <span class="icon"><i class="las la-map-marker"></i></span> San francisco, USA
+                                        </h3>
+                                        <h3 class="experience">
+                                            <span class="icon"><i class="lar la-star"></i></span> 5 Years Experience
+                                        </h3>
+                                    </div>
+                                    <div class="our-team-bio">
+                                        <p>In the ever-evolving landscape of business, are in robust and well defined strategies is the compassing that guides your journey to success. At Strategic Business Solutions, we specialize in crafting business strategies that go beyond mere plans. They are blueprints for growth, innovation, solution and enduring compassing that prosperity. At Strategic Business Solutions.</p>
+                                    </div>
+                                    <a href="team.html" class="theme-btn">
+                                        <i class="iconoir-arrow-up-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="our-team-box our-team-box3 d-flex">
+                            <div class="img-box">
+                                <img src="{% static 'assets/imgs/team-3.jpg' %}" alt="Team"/>
+                            </div>
+                            <div class="our-team-body card-h">
+                                <div class="mac-btns-wrap d-flex align-items-center justify-content-between">
+                                    <div class="mac-buttons d-flex align-items-center">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+        
+                                    <div class="action-btn d-flex align-items-center">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="our-team-body-inner">
+                                    <div class="our-team-personal-details">
+                                        <h3 class="name">
+                                            <span class="icon"><i class="las la-user"></i></span> Elsa Hermione
+                                        </h3>
+                                        <h3 class="web-design">
+                                            <span class="icon"><i class="las la-vector-square"></i></span> Senior Developer
+                                        </h3>
+                                        <h3 class="location">
+                                            <span class="icon"><i class="las la-map-marker"></i></span> Edinburgh, UK
+                                        </h3>
+                                        <h3 class="experience">
+                                            <span class="icon"><i class="lar la-star"></i></span> 3 Years Experience
+                                        </h3>
+                                    </div>
+                                    <div class="our-team-bio">
+                                        <p>In the ever-evolving landscape of business, are in robust and well defined strategies is the compassing that guides your journey to success. At Strategic Business Solutions, we specialize in crafting business strategies that go beyond mere plans. They are blueprints for growth, innovation, solution and enduring compassing that prosperity. At Strategic Business Solutions.</p>
+                                    </div>
+                                    <a href="team.html" class="theme-btn">
+                                        <i class="iconoir-arrow-up-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </section>
+{% endcomment %}
+
+
+        <!-- Testimonial -->
+        <section class="testimonial-area">
+            <div class="custom-container">
+                
+                <div class="testimonial-slider-wrap">
+                    <div class="testimonial-slider swiper">
+                        
+                        <div class="swiper-wrapper">
+                            {% for review in reviews %}
+                            <div class="swiper-slide testimonial-item">
+                                <div class="testimonial-item-body">
+                                    <img class="animation-slide-right bg-shape" src="{% static 'assets/imgs/bg-shape-3.svg' %}" alt="Shape"/>
+                                    
+                                    <h1>{{review.title}}</h1>
+                                    <p>{{review.review}}</p>
+                                    <div class="author-box d-flex align-items-center">
+                                        <img src="{% static 'assets/imgs/testimonial-1.jpg' %}" alt="Testimonial"/>
+                                        <div class="author-box-content">
+                                            <h4>{{review.user}}</h4>
+                                            <p>{{review.occupation}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                    
+                    </div>
+                    
+                    <!-- navigation buttons -->
+                    <div class="swiper-button-prev"><i class="iconoir-arrow-left"></i></div>
+                    <div class="swiper-button-next"><i class="iconoir-arrow-right"></i></div>
+                </div>
+
+            </div>
+        </section>
+        {% if make_review == True %}
+        {% if request.user.is_authenticated %}
+        <div class="custom-container">
+
+            <div class="hero-contact-form-wrap">
+                <div class="hero-contact-form-inner-wrap">
+                    <div class="mt-5">
+
+                        <div class="hero-contact-form-header d-flex align-items-center justify-content-between">
+                            <p class="section-title add-review" style="font-size: 28px;">Leave Us A Review</p>
+
+                            
+                        </div>
+
+                        <div class="hero-contact-form hide-comment-form">
+                            <form action="{% url "core:ajax-add-review" %}" id="reviewForm"  method="POST" class="contact-form d-flex ">
+                                {% csrf_token %}
+                                <div class="input-main-row">
+                                    
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                           
+                                            <label for="Occupation">Review Title</label>
+                                            {{review_form.title}}
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                           
+                                            <label for="Occupation">Occupation</label>
+                                           {{review_form.occupation}}
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                                <div class="input-main-row">
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                            <label for="message">Message</label>
+                                            {{review_form.review}}
+                                        </div>
+                                    </div>
+                                   
+                                   
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                            <button class="theme-btn" id="reviewSubmit">Submit</button>
+                                        </div>
+                                    </div>
+                                    <!-- Alert Message -->
+                                    <div class="input-row">
+                                        <div class="input-group alert-notification">
+                                            <div id="alert-message" class="alert-msg"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        {% endif %}
+        {% endif %}
+
+
+
+
+
+
+        <!-- Footer -->
+        {% endblock MainContent %}

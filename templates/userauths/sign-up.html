@@ -1,0 +1,87 @@
+
+{% extends "partials/base.html" %}
+{% load static %}
+{% block title %}{% endblock title %}
+{% block MainContent %}
+
+
+
+
+
+        <!-- Contact -->
+        <section class="contact-area">
+            <div class="custom-container">
+                <div class="custom-row row">
+                    <div class="contact-form-wrap col-6 custom-form-wrap">
+                        <div class="contact-form-body">
+                            <h5 class="section-subtitle">Membership</h5>
+                            <h1 class="section-title">Become A Member</h1>
+                            <p class="text-danger" id="SignUpErrorMessage"></p>
+                            <form action="" method="POST" class="contact-form" id="registerForm">
+                                {% csrf_token %}
+                                <div class="input-row">
+                                    <div class="input-group">
+                                        <label for="first_name">First Name</label>
+                                        <input type="text" id="first_name" name="username" placeholder="First Name" />
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="last_name">Last Name</label>
+                                        <input type="text" id="last_name" name="last_name" placeholder="Last Name" />
+                                    </div>
+                                </div>
+                                <div class="input-row">
+                                    <div class="input-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" placeholder="Your Email" />
+                                    </div>
+                                </div>
+                                <div class="input-row">
+                                    
+                                    <div class="input-group">
+                                        <label for="country">Country</label>
+                                        <input type="text" id="homeland" name="country" placeholder="Your Country" />
+                                    </div>
+                                </div>
+                                <div class="input-row">
+                                    <div class="input-group">
+                                       
+                                        <label for="phone_number">Password</label>
+                                        <input type="password" id="RegisterPassword1" name="password1" placeholder="Password" oninput="assignPassword()" />
+                                    </div>
+                             
+                                
+                                    <input type="password" name="password2" id="RegisterPassword2" placeholder="Enter Password" autocomplete="off" hidden>
+                                
+                                </div>
+                                
+                                <div class="input-row">
+                                    <div class="input-group input-checkbox">
+                                        <input type="checkbox" id="privacy_policy_accept" name="privacy_policy_accept">
+                                        <label for="privacy_policy_accept">You agree to our <a href="#">terms and conditions.</a></label>
+                                    </div>
+                                </div>
+
+                                <div class="input-row">
+                                    <div class="input-group">
+                                        <button id="registerBtn" type="submit" class="theme-btn text-white">Register</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="input-row" >
+                                    <div class="input-group align-text-right" >
+                                        <p style="border-bottom: none !important;" >Already a member of Openminds? <a href="{% url "userauths:sign-in" %}" >Sign In</a> </p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="picture-section col-5">
+                        <img src="{% static "assets/imgs/priscilla-du-preez-nNMBa7Y1Ymk-unsplash.jpg" %}" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+  {% endblock MainContent %}

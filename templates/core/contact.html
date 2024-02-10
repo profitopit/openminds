@@ -1,0 +1,154 @@
+
+{% extends "partials/base.html" %}
+{% load static %}
+{% block title %}{% endblock title %}
+{% block MainContent %}
+
+
+        <!-- Faq Hero -->
+        <section class="hero-service-wrap hero-section-wrap hero-portfolio-wrap">
+            <div class="hero-section-content-wrap" style="margin-bottom: -100px;">
+                <div class="custom-container">
+                    <div class="hero-portfolio-body">
+                        <div class="hero-section-content text-center">
+                            <h5 class="section-subtitle">Contact Us</h5>
+                            <h1 class="section-title fade-in">We are always open to talk</h1>
+                            <p>We have offices and teams all around the world</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contact-area" style="margin-top: -90px;">
+            <div class="custom-container">
+                <div class="custom-row">
+                    <div class="contact-form-wrap">
+                        <div class="contact-form-body">
+                            <h5 class="section-subtitle">Contact</h5>
+                            <h1 class="section-title">Lets get in touch</h1>
+                            <p>You can reach us anytime via <a href="mailto:openmindsinc@gmail.com">openmindsinc@gmail.com</a></p>
+                            <p class="text-danger" id="ContactErrorMessage" style="border-bottom: none; padding-bottom: 0px;"></p>
+                            <form action="" method="POST" class="contact-form" id="ContactForm">
+                                {% csrf_token %}
+                                <div class="input-row">
+                                    <div class="input-group">
+                                        <label for="first_name">First Name</label>
+                                        <input type="text" name="first_name" placeholder="First Name" required/>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="last_name">Last Name</label>
+                                        <input type="text"  name="last_name" placeholder="Last Name" required/>
+                                    </div>
+                                </div>
+                                <div class="input-row">
+                                    <div class="input-group">
+                                        <label for="email">Email</label>
+                                        <input type="email"  name="email" placeholder="Your Email" required />
+                                    </div>
+                                </div>
+                                <div class="input-row">
+                                    
+                                    <div class="input-group">
+                                        <label for="country">Country</label>
+                                        {{form.country}}
+                                    </div>
+                                </div>
+                                <div class="input-row">
+                                    <div class="input-group">
+                                        <label for="message">Message</label>
+                                        {{form.message}}
+                                    </div>
+                                </div>
+                               
+
+                                <div class="input-row">
+                                    <div class="input-group">
+                                        <button type="submit" id="contactSubmit" class="theme-btn">Submit</button>
+                                    </div>
+                                </div>
+                                <!-- Alert Message -->
+                                <div class="input-row">
+                                    <div class="input-group alert-notification">
+                                        <div id="alert-message" class="alert-msg"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="contact-experience">
+                        <ul>
+                            <li>
+                                <h1>22+ <span>Years</span></h1>
+                                <p>Field Experience </p>
+                            </li>
+                            <li>
+                                <h1>950+ <span>Projects</span></h1>
+                                <p>Done Around World </p>
+                            </li>
+                            <li>
+                                <h1>99%</h1>
+                                <p>Client Satisfaction</p>
+                            </li>
+                            <li>
+                                <h1>1995+ <span>Year</span></h1>
+                                <p>Established On</p>
+                            </li>
+                            <li>
+                                <h1>2 <span>Mins</span></h1>
+                                <p>Response Time</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-infos">
+                        <div class="contact-infos-inner">
+                            <div class="contact-info">
+                                <img src="{% static 'assets/imgs/support-icon.svg' %}" alt="Support" />
+                                <h3>Contact Info</h3>
+                                <p>
+                                    +1 455 1482 236 <br>
+                                    openmindsinc@gmail.com
+                                </p>
+                            </div>
+                            <div class="contact-office-info contact-info">
+                                <img src="{% static 'assets/imgs/map-icon.svg' %}" alt="Map" />
+                                <h3>Visit our office</h3>
+                                <p>16/9, Down Street
+                                    Edinburgh, Scotland
+                                    United Kingdom</p>
+                            </div>
+
+                            <ul class="contact-social-links">
+                                <li>
+                                    <a href="#">
+                                        <i class="iconoir-dribbble"></i> Dribbble
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="iconoir-twitter"></i> Twitter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="iconoir-instagram"></i> Instagram
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="iconoir-linkedin"></i> linkedin
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+  {% endblock MainContent %}
