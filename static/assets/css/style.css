@@ -6381,3 +6381,6 @@ img {
     align-items: center !important; 
     justify-content: center !important; 
 }
+#bookingErrorMessage{
+    font-family: "Poppins", sans-serif;
+}

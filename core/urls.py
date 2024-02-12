@@ -11,6 +11,6 @@ urlpatterns = [
     path('events/', event_view, name='events'),
     path('event/<eid>/', event_detail_view, name='event-detail'),
     path("ajax-add-review/", ajax_add_review, name="ajax-add-review"),
-    path("search/", search_view, name="search")
+    path("search/", search_view, name="search"),
 
 ]

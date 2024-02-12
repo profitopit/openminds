@@ -29,9 +29,9 @@ def register_view(request):
             )
             login(request, new_user)
             email_data = {
-                "from": "Openminds <welcome@openmindsinc.org>",
+                "from": "OpenmindsInc <welcome@openmindsinc.org>",
                 "to": email,
-                "subject": "Welcome to Openminds",
+                "subject": "Welcome to OpenmindsInc",
                 "html": f"""
                     <!DOCTYPE html>
                     <html lang="en">
@@ -57,12 +57,12 @@ def register_view(request):
             
             <tr>
               <td valign="top" align="left" style="font-family:Roboto,Helvetica,Arial sans-serif;font-size:14px;line-height:24px;color:#414347;padding:40px 40px 20px 40px">
-                Dear {username}, thank you for joining <span class="il">Openminds</span>. We are thrilled to have you join our community and embark on this journey together.</td>
+                Dear {username}, thank you for joining <span class="il">OpenmindsInc</span>. We are thrilled to have you join our community and embark on this journey together.</td>
             </tr>
 
             <tr>
               <td valign="top" align="left" style="font-family:Roboto,Helvetica,Arial sans-serif;font-size:14px;line-height:24px;color:#414347;padding:40px 40px 20px 40px">
-               As a member of Openminds, you are now part of a vibrant community dedicated to supporting and finding solutions to empower businesses. We believe that every member brings unique talents, perspectives, and experiences that enrich our collective efforts.</td>
+               As a member of OpenmindsInc, you are now part of a vibrant community dedicated to supporting and finding solutions to empower businesses. We believe that every member brings unique talents, perspectives, and experiences that enrich our collective efforts.</td>
             </tr>
             
             <tr>
@@ -73,7 +73,7 @@ def register_view(request):
             
             <tr>
               <td valign="top" align="left" style="font-family:Roboto,Helvetica,Arial sans-serif;font-size:14px;line-height:24px;color:#414347;padding:20px 40px 20px 40px">
-                Want to talk with us about your project? Contact us at <a href="tel:+16142161159" style="color: #1351d8; text-decoration: none; font-weight: 600;">+1 (614) 216-1159</a>  <span style="font-weight: 600;">Or</span>  <a href="mailto:openmindsinc@gmail.com" style="color: #1351d8;  text-decoration: none; font-weight: 600;">openmindsinc@gmail.com</a> </td>
+                Want to talk with us about your project? Contact us at <a href="tel:+16142161159" style="color: #1351d8; text-decoration: none; font-weight: 600;">+1 (614) 216-1159</a>  <span style="font-weight: 600;">Or</span>  <a href="mailto:openmindincofficial@gmail.com" style="color: #1351d8;  text-decoration: none; font-weight: 600;">openmindincofficial@gmail.com</a> </td>
             </tr>
             
             
@@ -88,7 +88,7 @@ def register_view(request):
             </tr>
             <tr>
               <td valign="top" align="left" style="font-family:Roboto,Helvetica,Arial sans-serif;font-size:14px;line-height:24px;color:#414347;padding:10px 40px 40px 40px">
-                Openminds team</td>
+                OpenmindsInc team</td>
             </tr>
             
           </tbody>
@@ -139,6 +139,3 @@ def logout_view(request):
     return redirect("core:index")
 
 
-def barber_onboard(request):
-
-    return render(request, 'userauths/barber-onboard.html')

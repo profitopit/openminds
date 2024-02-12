@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from core.models import Review, Blog, Event
-from userauths.forms import ContactForm
+from userauths.forms import ContactForm, BookingForm
 from core.forms import ReviewForm
 from django.contrib import messages
 from django.http import JsonResponse
-
+from userauths.models import Service
 
 def index(request):
+    form = BookingForm()
+    services = Service.objects.all().order_by("date")
     reviews = Review.objects.all().order_by("-date")
     blogs = Blog.objects.filter(featured=True).order_by("-date")
     events = Event.objects.filter(featured=True).order_by("-date")
@@ -17,12 +19,24 @@ def index(request):
         user_review_count = Review.objects.filter(user=request.user).count()
         if user_review_count > 0:
             make_review = False
+    if request.method == "POST" and request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
+        form = BookingForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return JsonResponse({'success': True, 'message': f""})
+            
+        else:
+            errors = form.errors.as_json()
+           
+            return JsonResponse({'success': False, 'errors': errors})
     context = {
         "reviews":reviews,
         "make_review": make_review,
         "review_form": review_form,
         "blogs": blogs,
         "events": events,
+        "form": form,
+        "services": services,
     }
     return render(request,"core/index.html", context)
                 

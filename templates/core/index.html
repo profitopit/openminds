@@ -87,39 +87,42 @@
                         <div class="mt-5">
 
                             <div class="hero-contact-form-header d-flex align-items-center justify-content-between">
-                                <p>You can contact us anytime via <a href="mailto:openmindsinc@gmail.com">openmindsinc@gmail.com</a></p>
+                                <p>You can contact us anytime via <a href="mailto:openmindincofficial@gmail.com">openmindincofficial@gmail.com</a></p>
 
                                 
                             </div>
 
                             <div class="hero-contact-form">
-                                <form action="" method="POST" class="contact-form d-flex">
+                            
+
+                                <form method="POST" class="contact-form d-flex" id="bookingForm" onsubmit="return validateForm()">
+                                    {% csrf_token %}
                                     <div class="input-main-row">
                                         <div class="input-row">
                                             <div class="input-group">
                                                 <label for="first_name">First Name</label>
-                                                <input type="text" placeholder="First Name" id="first_name" name="first_name"/>
+                                                <input type="text" placeholder="First Name" id="first_name" name="first_name" required/>
                                             </div>
                                             <div class="input-group">
                                                 <label for="last_name">Last Name</label>
-                                                <input type="text" placeholder="Last Name" id="last_name" name="last_name"/>
+                                                <input type="text" placeholder="Last Name" id="last_name" name="last_name" required/>
                                             </div>
                                         </div>
                                         <div class="input-row">
                                             <div class="input-group">
                                                 <label for="email">Email</label>
-                                                <input type="email" placeholder="Your Email" id="email" name="email"/>
+                                                <input type="email" placeholder="Your Email" id="email" name="email" required/>
                                             </div>
                                         </div>
                                         <div class="input-row">
                                             <div class="input-group">
                                                
                                                 <label for="business_name">Business Name</label>
-                                                <input type="text" name="business_name" placeholder="Your Business Name" />
+                                                <input type="text" name="business_name" placeholder="Your Business Name" required/>
                                             </div>
                                             <div class="input-group">
                                                 <label for="country">Country</label>
-                                                <input type="text" name="country" placeholder="Your Country" />
+                                                {{form.country}}
                                             </div>
                                         </div>
                                         <div class="input-row">
@@ -128,81 +131,58 @@
                                                 <div class="choice-a-company flex-wrap d-flex">
                                                     
                                                     <div class="radio-box">
-                                                        <input type="radio" id="education" name="choice_company" value="Education"/>
+                                                        <input type="radio" id="education" name="company_type" value="Education"/>
                                                         <label for="education">Education</label>
                                                     </div>
                                                     <div class="radio-box">
-                                                        <input type="radio" id="business" name="choice_company" value="Business"/>
+                                                        <input type="radio" id="business" name="company_type" value="Business"/>
                                                         <label for="business">Business</label>
                                                     </div>
                                                     <div class="radio-box">
-                                                        <input type="radio" id="agency" name="choice_company" value="Agency"/>
+                                                        <input type="radio" id="agency" name="company_type" value="Agency"/>
                                                         <label for="agency">Agency</label>
                                                     </div>
                                                     <div class="radio-box">
-                                                        <input type="radio" id="saas" name="choice_company" value="SAAS"/>
+                                                        <input type="radio" id="saas" name="company_type" value="SAAS"/>
                                                         <label for="saas">SAAS</label>
                                                     </div>
                                                     <div class="radio-box">
-                                                        <input type="radio" id="other" name="choice_company" value="Other"/>
+                                                        <input type="radio" id="other" name="company_type" value="Other"/>
                                                         <label for="other">Other</label>
                                                     </div>
                                                 </div>
+                                                <small id="radioError" style="color: red;"></small>
                                             </div>
                                         </div>
                                         <div class="input-row">
                                             <div class="input-group">
                                                 <label>What do you need from us?</label>
                                                 <div class="feedback-checkboxes d-flex flex-wrap">
+                                                    {% for service in services %}
                                                     <div class="feedback-item">
-                                                        <input type="checkbox" id="app_design" name="services[]" value="Project management"/>
-                                                        <label for="app_design">Project management</label>
+                                                        <input type="checkbox" id="{{service.sid}}" name="company_needs" value="{{service.id}}"/>
+                                                        <label for="{{service.sid}}">{{service.title}}</label>
                                                     </div>
-                                                    <div class="feedback-item">
-                                                        <input type="checkbox" id="web_design" name="services[]" value="Research Management"/>
-                                                        <label for="web_design">Research Management</label>
-                                                    </div>
-                                                    <div class="feedback-item">
-                                                        <input type="checkbox" id="branding" name="services[]" value="Educational Consultancy"/>
-                                                        <label for="branding">Educational Consultancy</label>
-                                                    </div>
-                                                    <div class="feedback-item">
-                                                        <input type="checkbox" id="development" name="services[]" value="Psychological Studies"/>
-                                                        <label for="development">Psychological Studies</label>
-                                                    </div>
-                                                    <div class="feedback-item">
-                                                        <input type="checkbox" id="cloud_service" name="services[]" value="Event Planning/Management"/>
-                                                        <label for="cloud_service">Event Planning/Management</label>
-                                                    </div>
-                                                    <div class="feedback-item">
-                                                        <input type="checkbox" id="other" name="services[]" value="Project Monitoring/Supervision"/>
-                                                        <label for="other">Project Monitoring/Supervision</label>
-                                                    </div>
-                                                    <div class="feedback-item">
-                                                        <input type="checkbox" id="other" name="services[]" value="Other"/>
-                                                        <label for="other">Other</label>
-                                                    </div>
+                                                    {% endfor %}
+                                                    
                                                 </div>
+                                                <small id="checkboxError" style="color: red;"></small>
                                             </div>
                                         </div>
                                     </div>
+                            
+                                    
+                                    
+                                    
                                     <div class="input-main-row">
                                         <div class="input-row">
                                             <div class="input-group">
                                                 <label for="message">Message</label>
                                                 <textarea name="message" id="message" placeholder="Leave us a message...."></textarea>
                                             </div>
+                                            
                                         </div>
-                                        <div class="input-row">
-                                            <div class="input-group">
-                                                <label for="budget">Budget</label>
-                                                <input id="pi_input" type="range" min="0" max="200" step="1" style="padding: 0;" name="budget" />
-                                                <div class="budget-values d-flex align-items-center justify-content-between w-full">
-                                                    <div class="left-value">$<span id="budget-value">300</span>k</div>
-                                                    <div class="right-value">$200k</div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <small id="messageError" style="color: red;"></small>
                                         <div class="input-row">
                                             <div class="input-group input-checkbox">
                                                 <input type="checkbox" id="privacy_policy_accept" name="privacy_policy_accept" value="1">
@@ -211,13 +191,13 @@
                                         </div>
                                         <div class="input-row">
                                             <div class="input-group">
-                                                <button class="theme-btn" id="submit">Get Started</button>
+                                                <button class="theme-btn" id="bookingBtn">Submit</button>
                                             </div>
                                         </div>
                                         <!-- Alert Message -->
                                         <div class="input-row">
                                             <div class="input-group alert-notification">
-                                                <div id="alert-message" class="alert-msg"></div>
+                                                <div id="bookingErrorMessage" class="text-danger"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -242,14 +222,9 @@
                     <div class="service2-header d-flex align-items-center justify-content-between w-full">
                         <div class="left">
                             <h5 class="section-subtitle">OUR SERVICES</h5>
-                            <h1 class="section-title">We provide best services</h1>
+                            <h1 class="section-title">What we do at OpenmindsInc</h1>
                             <p>Enhancing Business Efficiency with Premier Solutions.</p>
                         </div>
-
-                        <a href="{% url "core:blogs" %}" class="theme-btn">
-                            Learn More 
-                            <i class="iconoir-arrow-up-right"></i> 
-                        </a>
                     </div>
                 </div>
 
