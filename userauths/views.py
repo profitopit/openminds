@@ -73,7 +73,7 @@ def register_view(request):
             
             <tr>
               <td valign="top" align="left" style="font-family:Roboto,Helvetica,Arial sans-serif;font-size:14px;line-height:24px;color:#414347;padding:20px 40px 20px 40px">
-                Want to talk with us about your project? Contact us at <a href="tel:+16142161159" style="color: #1351d8; text-decoration: none; font-weight: 600;">+1 (614) 216-1159</a>  <span style="font-weight: 600;">Or</span>  <a href="mailto:openmindincofficial@gmail.com" style="color: #1351d8;  text-decoration: none; font-weight: 600;">openmindincofficial@gmail.com</a> </td>
+                Want to talk with us about your project? Contact us at <a href="tel:+2348089421545" style="color: #1351d8; text-decoration: none; font-weight: 600;">+234-808-9421-545</a>  <span style="font-weight: 600;">Or</span>  <a href="mailto:openmindincofficial@gmail.com" style="color: #1351d8;  text-decoration: none; font-weight: 600;">openmindincofficial@gmail.com</a> </td>
             </tr>
             
             
