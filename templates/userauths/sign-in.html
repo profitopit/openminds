@@ -1,7 +1,11 @@
 
 {% extends "partials/base.html" %}
 {% load static %}
-{% block title %}{% endblock title %}
+{% block metaTags %}
+<meta name="description" content="Sign in to your account on OpenmindsInc. Log in now to continue.">
+<meta name="keywords" content="Sign in, log in, login, access account, OpenmindsInc">   
+{% endblock metaTags %}
+{% block title %}Sign In - OpenmindsInc{% endblock title %}
 {% block MainContent %}
 
 
@@ -15,7 +19,7 @@
                     <div class="contact-form-wrap ">
                         <div class="contact-form-body">
                             <h5 class="section-subtitle">Membership</h5>
-                            <h1 class="section-title">Become A Member</h1>
+                            <h1 class="section-title">Sign In</h1>
                             <p class="text-danger" id="LoginErrorMessage"></p>
                             <form action="" method="POST" class="contact-form" id="loginForm">
                                 {% csrf_token %}

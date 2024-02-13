@@ -1,10 +1,14 @@
 {% extends "partials/base.html" %}
 {% load static %}
-{% block title %}{% endblock title %}
+{% block metaTags %}
+<meta name="description" content="Discover upcoming events, conferences, and seminars hosted by OpenmindsInc. Stay updated and join us for enriching experiences.">
+<meta name="keywords" content="Events, conferences, seminars, OpenmindsInc, upcoming events">
+{% endblock metaTags %}
+{% block title %}Events - OpenmindsInc{% endblock title %}
 {% block MainContent %}
 
 
-        <!-- Event Hero -->
+       <!-- Event Hero -->
         <section class="hero-service-wrap hero-section-wrap hero-career-wrap hero-event-wrap" >
             <div class="hero-section-content-wrap background-text-img">
                 <img src="{% static 'assets/imgs/bg-shape-1.svg' %}" alt="Shape" class="animation-slide-left bg-shape" />
@@ -15,7 +19,7 @@
                             <h1 class="section-title fade-in">Our mentor teaching everywhere</h1>
                             <p>Every event we organize is a unique opportunity to craft memorable experiences. We go <br>
                                 beyond the ordinary, paying attention to every detail</p>
-                            <a href="contact.html" class="theme-btn">Book an appointment now</a>
+                            <a href="{% url "core:contact" %}" class="theme-btn">Book an appointment now</a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +94,7 @@
                         <h2>Build your project with us, Make it world class</h2>
                         <p>Our projects are born from a passion for innovation that knows no bounds.</p>
                     </div>
-                    <a href="contact.html" class="theme-btn">Book an appointment now</a>
+                    <a href="{% url "core:contact" %}" class="theme-btn">Book an appointment now</a>
 
                 </div>
             </div>

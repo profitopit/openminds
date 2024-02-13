@@ -9,11 +9,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="OpenmindsInc">
+    <meta name="language" content="English">
+    <meta name="copyright" content="Copyright © 2024 OpenmindsInc">
+    <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "name": "OpenmindsInc",
+          "url": "http://www.openmindsinc.org",
+          "logo": "http://www.openmindsinc.org/static/assets/favicon/favicon-32x32.png",
+          "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+234-808-9421-545",
+                "contactType": "customer service"
+            }
+            ]
+        }
+    </script>
+    {% block metaTags %}
     
+    {% endblock metaTags %}
     <!-- ========== Page Title ========== -->
     <title>{% block title %}{% endblock title %}</title>
 
     <!-- ========== Start Fonts Style ========== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link
@@ -42,6 +65,7 @@
 <body>
 
     <!-- Main -->
+
     <main class="main-page homepage2">
 
         <!-- Header -->
@@ -75,7 +99,7 @@
                                     
                                 </li>
                                 <li class="">
-                                    <a href="" class="nav-link-color">About</a>
+                                    <a href="{% url "core:about" %}" class="nav-link-color">About</a>
                                    
                                    
                                 </li>
@@ -112,9 +136,9 @@
                                                     <div
                                                         class="mega-meu-footer d-flex align-items-center justify-content-between w-full">
                                                         <ul class="mega-menu-social d-flex align-items-center">
-                                                            <li><a href="https://x.com/open_minds2101?s=11"><i class="iconoir-twitter"></i></a></li>
-                                                            <li><a href="https://www.instagram.com/openmindsinc?igsh=MXNyaHppZHY3dGNvbA%3D%3D&utm_source=qr"><i class="iconoir-instagram"></i></a></li>
-                                                            <li><a href="https://www.facebook.com/profile.php?id=61555431017385&mibextid=2JQ9oc"><i class="iconoir-facebook"></i></a></li>
+                                                            <li><a href="https://x.com/open_minds2101?s=11" target="_blank"><i class="iconoir-twitter"></i></a></li>
+                                                            <li><a href="https://www.instagram.com/openmindsinc?igsh=MXNyaHppZHY3dGNvbA%3D%3D&utm_source=qr" target="_blank"><i class="iconoir-instagram"></i></a></li>
+                                                            <li><a href="https://www.facebook.com/profile.php?id=61555431017385&mibextid=2JQ9oc" target="_blank"><i class="iconoir-facebook"></i></a></li>
                                                         </ul>
 
                                                         <p>
@@ -233,7 +257,7 @@
                         <h3>Company</h3>
                         <ul>
                             <li><a href="{% url "core:blogs" %}">Blog</a></li>
-                            <li><a href="">About Us</a></li>
+                            <li><a href="{% url "core:about" %}">About Us</a></li>
                             <li><a href="{% url "core:contact" %}">Contact Us</a></li>
                             <li><a href="{% url "core:events" %}">Events</a></li>
                         </ul>
@@ -244,17 +268,12 @@
                             <li><a href="">Education</a></li>
                             <li><a href="">Healthcare</a></li>
                             <li><a href="">Banks</a></li>
-                            <li><a href="">Logistics</a></li>
-                         
-                           
+ 
                         </ul>
-                    </div>
+                    </div> 
                     <div class="footer-links">
                         <h3>Legal</h3>
                         <ul>
-                            <li><a href="#">Licenses</a></li>
-                            <li><a href="#">Settings</a></li>
-                  
                             <li><a href="#">Terms</a></li>
                             <li><a href="#">Privacy</a></li>
                         </ul>
@@ -304,8 +323,6 @@
 
 
 </main>
-
-
 
 
 <!-- jQuery Frameworks

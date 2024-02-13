@@ -1,6 +1,10 @@
 {% extends "partials/base.html" %}
 {% load static %}
-{% block title %}{% endblock title %}
+{% block metaTags %}
+<meta name="description" content="Welcome to OpenmindsInc. Solving problems and Research is what we do.">
+<meta name="keywords" content="OpenmindsInc, business, services, solutions, company, homepage"> 
+{% endblock metaTags %}
+{% block title %}Welcome to OpenmindsInc{% endblock title %}
 {% block MainContent %}
 
         <!-- Hero -->
@@ -10,7 +14,7 @@
                     <div class="hero-empowerment-left-content">
                         <h5 class="section-subtitle">HAVEN OF POSSIBILITIES</h5>
                         <h1 class="section-title fade-in">Solving problems and Research is what we do.</h1>
-                        <p>We provide the support and solutions to empower your business.</p>
+                        <p>We offer tailored solutions to empower your endeavors.</p>
                         <div class="btns-group d-flex">
                             <a href="{% url "userauths:sign-up" %}" class="theme-btn">Join Us</a>
                             <a href="{% url "core:contact" %}" class="theme-btn2">Let's Talk
@@ -26,13 +30,13 @@
 
                             <div class="experience-box simple-shadow bounce-in">
                                 <div class="experience-body d-flex align-items-center">
-                                    <img src="{% static 'assets/imgs/icon1.svg' %}" alt="Icon" />
+                                    <img src="{% static 'assets/logo/openminds-full-small.png' %}" alt="Icon" />
 
                                     <div class="experience-content d-flex align-items-center">
-                                        <h1>+8</h1>
+                                        
                                         <p>
-                                            Years
-                                            <span>Experience</span>
+                                            OpenmindsInc
+                                            <span></span>
                                         </p>
                                     </div>
                                 </div>
@@ -49,8 +53,8 @@
                                         <img src="{% static 'assets/imgs/small-img-1.png' %}" alt="team" />
                                     </div>
                                     <p>
-                                        Meet
-                                        <span>Our Experts</span>
+                                        Solutions
+                                        <span>Experts</span>
                                     </p>
                                 </div>
                             </a>
@@ -58,7 +62,7 @@
                             <div class="google-reviews-box simple-shadow bounce-in delay-3">
                                 <div class="left">
                                     <span>Trusted by</span>
-                                    <img src="{% static 'assets/imgs/icon2.svg' %}" alt="Google" />
+                                    <p style="font-size: 12px; color: #1351d8;">Companies</p>
                                 </div>
                                 <div class="right">
                                     <div class="stars d-flex align-items-center">
@@ -66,7 +70,7 @@
                                         <i class="las la-star"></i>
                                         <i class="las la-star"></i>
                                         <i class="las la-star"></i>
-                                        <i class="las la-star"></i>
+                                        <i class="las la-star-half"></i>
                                     </div>
                                     <p>
                                         3245
@@ -185,8 +189,7 @@
                                         <small id="messageError" style="color: red;"></small>
                                         <div class="input-row">
                                             <div class="input-group input-checkbox">
-                                                <input type="checkbox" id="privacy_policy_accept" name="privacy_policy_accept" value="1">
-                                                <label for="privacy_policy_accept">Click the box and agree to our <a href="#">terms and conditions.</a></a></label>
+                                                <small id="messageError" style="color: red;"></small>
                                             </div>
                                         </div>
                                         <div class="input-row">
@@ -223,44 +226,44 @@
                         <div class="left">
                             <h5 class="section-subtitle">OUR SERVICES</h5>
                             <h1 class="section-title">What we do at OpenmindsInc</h1>
-                            <p>Enhancing Business Efficiency with Premier Solutions.</p>
+                            <p>Empowering Growth with Innovative Solutions.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="service2-items d-flex w-full">
-                    <div class="service2-card card-h">
-                        <img src="{% static 'assets/imgs/project_manage.jpg' %}" class="rounded-2" style="width: 241.6px; height: 128px;" alt="Service" />
+                    <div class="service2-card card-h ">
+                        <img src="{% static 'assets/imgs/project_manage.jpg' %}" class="rounded-2" loading="lazy" style="width: 241.6px; height: 128px;" alt="Service"  />
                         <h2>Project Management</h2>
-                        <p>Stay ahead of the curve <br>
-                            in-depth market analysis.</p>
+                        <p>Orchestrating tasks, resources, <br>
+                            and timelines to achieve goals efficiently. </p>
                         <a href="#contactSection" class="theme-btn">
                             <i class="iconoir-arrow-up-right"></i> 
                         </a>
                     </div>
-                    <div class="service2-card card-h">
-                        <img src="{% static 'assets/imgs/research_manage.jpg' %}" class="rounded-2" style="width: 241.6px; height: 128px;" alt="Service" />
+                    <div class="service2-card card-h ">
+                        <img src="{% static 'assets/imgs/research_manage.jpg' %}" class="rounded-2" loading="lazy" style="width: 241.6px; height: 128px;" alt="Service" />
                         <h2>Research Management</h2>
-                        <p>We have a best team for <br>
-                            your shopping websites.</p>
+                        <p>Guiding the organization  of  <br>
+                           research endeavors for effective outcomes. </p>
                         <a href="#contactSection" class="theme-btn">
                             <i class="iconoir-arrow-up-right"></i> 
                         </a>
                     </div>
-                    <div class="service2-card card-h">
-                        <img src="{% static 'assets/imgs/education.jpg' %}"  style="width: 241.6px; height: 128px;" alt="Service" />
+                    <div class="service2-card card-h ">
+                        <img src="{% static 'assets/imgs/education.jpg' %}" class="rounded-2" loading="lazy"  style="width: 241.6px; height: 128px;" alt="Service" />
                         <h2>Educational Consultancy</h2>
-                        <p>Navigating organizational <br>
-                            change can be complex.</p>
+                        <p>Guiding individuals through <br>
+                            education for optimal learning outcomes.</p>
                         <a href="#contactSection" class="theme-btn">
                             <i class="iconoir-arrow-up-right"></i> 
                         </a>
                     </div>
-                    <div class="service2-card card-h">
-                        <img src="{% static 'assets/imgs/psychology.jpg' %}" class="rounded-2" style="width: 241.6px; height: 128px;" alt="Service" />
+                    <div class="service2-card card-h ">
+                        <img src="{% static 'assets/imgs/psychology.jpg' %}" class="rounded-2" loading="lazy" style="width: 241.6px; height: 128px;" alt="Service" />
                         <h2>Psychological Studies</h2>
-                        <p>We create vibrant, intuitive <br>
-                            and minimalist branding</p>
+                        <p>Exploring human behavior <br>
+                            and mental processes through research. </p>
                         <a href="#contactSection" class="theme-btn">
                             <i class="iconoir-arrow-up-right"></i>  
                         </a>
@@ -269,15 +272,15 @@
 
                 <div class="d-flex gap-24 service2-bottom-2-col">
                     <div class="service3-card d-flex flex-1 card-h">
-                        <img src="{% static 'assets/imgs/event_planning.jpg' %}" alt="Service"/>
+                        <img src="{% static 'assets/imgs/event_planning.jpg' %}" loading="lazy" alt="Service"/>
                         <div class="service3-body">
                             <div class="service3-content">
                                 <h3 style="font-size: 20px;">Event Planning/Management</h3>
-                                <p>Success require a proactive strategic <br>
-                                    approach to business development.</p>
+                                <p>Orchestrating logistics, schedules,<br>
+                                    and resources to execute successful events.</p>
                                 <ul>
-                                    <li><i class="las la-check"></i> Customized Growth</li>
-                                    <li><i class="las la-check"></i> Market Penetration</li>
+                                    <li><i class="las la-check"></i> Turning Visions Real</li>
+                                    <li><i class="las la-check"></i> Crafting Memorable Experiences</li>
                                 </ul>
                                 <a href="#contactSection" class="theme-btn">
                                     <i class="iconoir-arrow-up-right"></i>  
@@ -286,12 +289,12 @@
                         </div>
                     </div>
                     <div class="service3-card d-flex flex-1 card-h">
-                        <img src="{% static 'assets/imgs/project_supervision.jpg' %}" alt="Service"/>
+                        <img src="{% static 'assets/imgs/project_supervision.jpg' %}" loading="lazy" alt="Service"/>
                         <div class="service3-body">
                             <div class="service3-content">
                                 <h3 style="font-size: 20px;">Project Monitoring/Supervision</h3>
-                                <p>We are your partners <br>
-                                    in today's markets</p>
+                                <p>Overseeing project progress and<br>
+                                    ensuring adherence to objectives quality standards. </p>
                                 <ul>
                                     <li><i class="las la-check"></i> Industry Insights</li>
                                     <li><i class="las la-check"></i> Optimize Resources</li>
@@ -394,7 +397,7 @@
                         <div class="tab-pane fade" id="market_analysis" role="tabpanel" aria-labelledby="market_analysis-tab">
                             <div class="about2-tab-content-body d-flex gap-24">
                                 <div class="img-box">
-                                    <img src="{% static 'assets/imgs/research_manage.jpg' %}" alt="About"/>
+                                    <img src="{% static 'assets/imgs/research_manage.jpg' %}" loading="lazy" alt="About"/>
                                 </div>
 
                                 <div class="content-box card-h">
@@ -427,7 +430,7 @@
                         <div class="tab-pane fade" id="process_optimation" role="tabpanel" aria-labelledby="process_optimation-tab">
                             <div class="about2-tab-content-body d-flex gap-24">
                                 <div class="img-box">
-                                    <img src="{% static 'assets/imgs/event_planning.jpg' %}" alt="About"/>
+                                    <img src="{% static 'assets/imgs/event_planning.jpg' %}" loading="lazy" alt="About"/>
                                 </div>
 
                                 <div class="content-box card-h">
@@ -461,7 +464,7 @@
                         <div class="tab-pane fade" id="performance_improvement" role="tabpanel" aria-labelledby="performance_improvement-tab">
                             <div class="about2-tab-content-body d-flex gap-24">
                                 <div class="img-box">
-                                    <img src="{% static 'assets/imgs/education.jpg' %}" alt="About"/>
+                                    <img src="{% static 'assets/imgs/education.jpg' %}" loading="lazy" alt="About"/>
                                 </div>
 
                                 <div class="content-box card-h">
@@ -494,7 +497,7 @@
                         <div class="tab-pane fade" id="entrepreneurial_guidance" role="tabpanel" aria-labelledby="entrepreneurial_guidance-tab">
                             <div class="about2-tab-content-body d-flex gap-24">
                                 <div class="img-box">
-                                    <img src="{% static 'assets/imgs/project_supervision.jpg' %}" alt="About"/>
+                                    <img src="{% static 'assets/imgs/project_supervision.jpg' %}" loading="lazy" alt="About"/>
                                 </div>
 
                                 <div class="content-box card-h">
@@ -526,7 +529,7 @@
                         <div class="tab-pane fade" id="psychology_guidance" role="tabpanel" aria-labelledby="psychology_guidance-tab">
                             <div class="about2-tab-content-body d-flex gap-24">
                                 <div class="img-box">
-                                    <img src="{% static 'assets/imgs/psychology.jpg' %}" alt="About"/>
+                                    <img src="{% static 'assets/imgs/psychology.jpg' %}" loading="lazy" alt="About"/>
                                 </div>
 
                                 <div class="content-box card-h">
@@ -570,12 +573,11 @@
                     <div class="feature2-content">
                         <div class="feature2-header">
                             <h5 class="section-subtitle">CONSULTING EXCELLENCE</h5>
-                            <h1 class="section-title">Build a solution that <br>
-                                wins you more clients.</h1>
+                            <h1 class="section-title">Building a long lasting solution.</h1>
                         </div>
 
                         <div class="feature2-content-body d-flex flex-wrap">
-                            <div class="feature2-card">
+                            <div class="feature2-card ">
                                 <span class="icon">
                                     <img src="{% static 'assets/imgs/hwd-icon-1.svg' %}" alt="Icon"/>
                                 </span>
@@ -620,7 +622,7 @@
                                 </div>
                             </div>
 
-                            <img src="{% static 'assets/imgs/laptop-study.jpg' %}" height="550" alt="a man researching"/>
+                            <img src="{% static 'assets/imgs/laptop-study.jpg' %}" loading="lazy" height="550" alt="a man researching"/>
                         </div>
 
                     </div>
@@ -649,7 +651,7 @@
                 <div class="news2-lists d-flex">
                     {% for blog in blogs %}
                     <div class="news2-card card-h">
-                        <img src="{{blog.image.url}}" alt="Blog"/>
+                        <img src="{{blog.image.url}}" loading="lazy" alt="Blog"/>
                         <div class="news2-card-body">
                             <div class="meta">
                                 <span class="date">{{blog.date|date:"d M, Y"}}</span>
@@ -857,7 +859,12 @@
                                     <h1>{{review.title}}</h1>
                                     <p>{{review.review}}</p>
                                     <div class="author-box d-flex align-items-center">
-                                        <img src="{% static 'assets/imgs/testimonial-1.jpg' %}" alt="Testimonial"/>
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path 
+                                            d="M5.75988 19.8248C6.9173 17.5547 9.27709 16 12 16C14.7019 16 17.0462 17.5308 18.2131 19.7723M14.3333 10.4444C14.3333 11.7945 13.2389 12.8889 11.8889 12.8889C10.5389 12.8889 9.44444 11.7945 9.44444 10.4444C9.44444 9.09442 10.5389 8 11.8889 8C13.2389 8 14.3333 9.09442 14.3333 10.4444ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" 
+                                            stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                            </path>
+                                        </svg>
                                         <div class="author-box-content">
                                             <h4>{{review.user}}</h4>
                                             <p>{{review.occupation}}</p>

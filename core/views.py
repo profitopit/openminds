@@ -8,12 +8,23 @@ from userauths.models import Service
 from django.conf import settings
 import resend
 import threading
+
+
+
 resend.api_key = getattr(settings, 'SENSITIVE_VARIABLE', None)
+
+
 
 
 def send_email_async(email_data):
     # Send the email using the resend module
     resend.Emails.send(email_data)
+
+
+
+
+
+
 
 
 
@@ -126,6 +137,11 @@ def index(request):
     return render(request,"core/index.html", context)
                 
 
+
+
+
+
+
 def contact(request):
     if request.method == "POST" and request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
         form = ContactForm(request.POST or None)
@@ -144,6 +160,10 @@ def contact(request):
     form = ContactForm()
     context = {'form': form}
     return render(request, "core/contact.html", context)
+
+
+
+
 
 
 def ajax_add_review(request):
@@ -174,6 +194,10 @@ def ajax_add_review(request):
     )
 
 
+
+
+
+
 def blog_view(request):
     first_blog = Blog.objects.filter(featured=True).first()
     blogs = Blog.objects.exclude(pk=first_blog.pk) if first_blog else Blog.objects.all()
@@ -182,6 +206,10 @@ def blog_view(request):
         "blogs": blogs,
     }
     return render(request, "core/blog.html", context)
+
+
+
+
 
 
 def search_view(request):
@@ -198,6 +226,9 @@ def search_view(request):
     }
     return render(request, "core/search.html", context)
 
+
+
+
 def blog_detail_view(request, bid):
     
     blog = Blog.objects.get(bid=bid)
@@ -207,6 +238,9 @@ def blog_detail_view(request, bid):
     return render(request, "core/blog-details.html", context)
 
 
+
+
+
 def event_view(request):
     events = Event.objects.all()
     context = {
@@ -214,9 +248,17 @@ def event_view(request):
     }
     return render(request, "core/event.html", context)
 
+
+
+
+
 def event_detail_view(request, eid):
     event = Event.objects.get(eid=eid)
     context = {
         "event": event,
     }
     return render(request, "core/event-single.html", context)
+
+
+def about_view(request):
+    return render(request, "core/about.html")

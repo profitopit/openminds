@@ -147,7 +147,7 @@ $(document).ready(function(){
                         _html +='<h1>'+res.context.title+'</h1>'
                         _html +='<p>'+res.context.review+'</p>'
                         _html += '<div class="author-box d-flex align-items-center">'
-                        _html +='<img src="static/assets/imgs/testimonial-1.jpg" alt="Testimonial"/>'
+                        _html +='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.75988 19.8248C6.9173 17.5547 9.27709 16 12 16C14.7019 16 17.0462 17.5308 18.2131 19.7723M14.3333 10.4444C14.3333 11.7945 13.2389 12.8889 11.8889 12.8889C10.5389 12.8889 9.44444 11.7945 9.44444 10.4444C9.44444 9.09442 10.5389 8 11.8889 8C13.2389 8 14.3333 9.09442 14.3333 10.4444ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
     
                         _html +='<div class="author-box-content">'
                         _html +='<h4>'+res.context.user+'</h4>'
@@ -170,16 +170,6 @@ $(document).ready(function(){
         })
     })
 })
-
-
-
-
-
-
-
-
-
-
 
 
 

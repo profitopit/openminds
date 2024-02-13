@@ -22,8 +22,6 @@ $(function() {
 			}
 		});
 		
-		// The following credit: http://www.evanblack.com/blog/touch-slide-to-unlock/
-		
 		$('#slide-ball')[0].addEventListener('touchmove', function(event) {
 			event.preventDefault();
 			var el = event.target;
