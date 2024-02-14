@@ -13,6 +13,12 @@
     <meta name="author" content="OpenmindsInc">
     <meta name="language" content="English">
     <meta name="copyright" content="Copyright © 2024 OpenmindsInc">
+    <meta property="og:url" content="http://{{request.META.HTTP_HOST}}{{request.path}}">
+    <meta property="og:title" content="OpenmindsInc">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://{{request.META.HTTP_HOST}}{% static "assets/logo/openminds-full.png" %}">
+    <meta property="twitter:image" content="http://{{request.META.HTTP_HOST}}{% static "assets/logo/openminds-full-small.png" %}">
+    <meta property="og:description" content="Solving problems and Research is what we do.">
     <script type="application/ld+json">
         {
           "@context": "http://schema.org",
@@ -75,7 +81,7 @@
                 <div class="custom-row align-items-center justify-content-between">
                     <div class="header-left d-flex align-items-center">
                         <a href="/" class="logo">
-                            <img src="{% static 'assets/logo/openminds-full.png' %}" alt="Logo" />
+                            <img src="{% static 'assets/logo/openminds-full.png' %}" alt="OpenmindsInc Logo" />
                         </a>
 
                         <div class="header-left-right">
@@ -211,7 +217,7 @@
             <div class="custom-row align-items-end justify-content-between">
                 <div class="left-content">
                     <a href="index.html" class="logo">
-                        <img src="{% static 'assets/logo/openminds-full.png' %}" style="height: 40px;" alt="Logo" />
+                        <img src="{% static 'assets/logo/openminds-full.png' %}" style="height: 40px;" alt="OpenmmindsInc Logo" />
                     </a>
                     <p>We provide the expertise and support to <br>
                         propel your business forward.</p>

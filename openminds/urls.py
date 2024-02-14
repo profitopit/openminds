@@ -20,11 +20,27 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import re_path as url
 from django.views.static import serve
+from core.sitemaps import StaticSitemap, BlogSitemap, EventSitemap
+from django.views.generic.base import TemplateView
+#Sitemaps
+from django.contrib.sitemaps.views import sitemap
+
+sitemaps = {
+    'static': StaticSitemap,
+    'Blog': BlogSitemap,
+    "Event": EventSitemap,
+}
+context = {
+    'sitemaps': sitemaps
+}
 
 urlpatterns = [
     url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
 
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+
+    path('sitemap.xml/', sitemap, context, name="django.contrib.sitemaps.views.sitemap"),
+    path('robots.txt/', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
     path("admin/", admin.site.urls),
     path("", include('core.urls')),
     path("", include('userauths.urls')),

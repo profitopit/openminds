@@ -33,6 +33,9 @@ class Blog(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.blog_title
+    def get_absolute_url(self):
+        return f'/blog/{self.bid}/'
+    
     
 class Event(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
@@ -64,6 +67,8 @@ class Event(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.event_title
+    def get_absolute_url(self):
+        return f'/event/{self.eid}/'
 
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
