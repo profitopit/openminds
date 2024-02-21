@@ -9,7 +9,11 @@
             <div class="custom-container">
                 <div class="blog-details-header-content-body d-flex align-items-center">
                     <div class="section-header">
+                        {% if blog.read %}
+                        <h5 class="section-subtitle">Blog read ✔</h5>
+                        {% else %}
                         <h5 class="section-subtitle">Blog</h5>
+                        {% endif %}
                         <h1 class="section-title fade-in">{{blog.blog_title}}</h1>
                         <p>Stay connected with us by subscribing to our blog updates.</p>
                     </div>
@@ -57,11 +61,20 @@
                             <p>Virtualization is the process of creating virtual versions of hardware or software resources, allowing multiple applications or operating systems to run on a single physical server. This technology optimizes resource utilization, reduces hardware costs, and simplifies IT management. By embracing virtualization services, businesses can enhance flexibility, increase efficiency, and easily deploy new applications without the need for additional physical hardware. Data-driven decision-making is a key factor in modern business success. IT services provide advanced business intelligence and analytics tools that can process and analyze vast amounts of data, extracting meaningful insights. </p>
                             <p>As cyber threats continue to evolve, having a robust network security solution is paramount. IT service providers offer comprehensive security measures such as firewalls, intrusion detection systems, and antivirus software to safeguard your network from unauthorized access.</p>
                             <p>IT services have evolved into an indispensable component of modern business success. From cloud computing and managed IT support to network security and data analytics, each service plays a crucial role in empowering businesses to thrive in a technology-driven world. By embracing these IT solutions and partnering with the right service provider, your business can unlock its full potential, achieve operational excellence, and stay ahead of the competition in today's dynamic market. In conclusion, IT services have become the backbone of modern businesses, providing a multitude of benefits that drive growth, efficiency, and success. </p> {% endcomment %}
-
+                            {% if request.user.is_authenticated %}
                             <div class="blog-details-pagination d-flex align-items-center justify-content-between">
-                                <a href="#" class="theme-btn">Previous</a>
-                                <a href="#" class="theme-btn">Next</a>
+                            {% if blog.read %}
+                            <a  class="theme-btn" >Blog read <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4.5C4 3.11929 5.11929 2 6.5 2H20V22H6.5C5.11929 22 4 20.8807 4 19.5V4.5Z" stroke="#fff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 19.5V19.5C4 18.1193 5.11928 17 6.49998 17H20" stroke="#fff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+                            {% else %}
+                            <a  class="theme-btn mark-as-read-btn" data-blog-id="{{ blog.id }}">Mark as Read ✔</a>
+                            {% endif %}
                             </div>
+                            {% else %}
+                            <div class="blog-details-pagination d-flex align-items-center justify-content-between">
+                        
+                                <a href="{% url "core:blogs" %}" class="theme-btn">All Blogs</a>
+                            </div>
+                            {% endif %}
                         </div>
 
                     </div>
@@ -78,11 +91,10 @@
                     <div class="left">
                         <h5 class="section-subtitle">OUR LATEST BLOGS</h5>
                         <h1 class="section-title">Read more blogs of our company</h1>
-                        <p>Are you busy reading out IT fires instead of focusing on your core business</p>
                     </div>
                 </div>
 
-                <div class="sticky-news d-flex card-h1">
+                {% comment %} <div class="sticky-news d-flex card-h1">
                     <div class="news-img-box">
                         <img src="{% static 'assets/imgs/news-6.jpg' %}" alt="News"/>
                     </div>
@@ -104,21 +116,21 @@
                             <i class="icon-right iconoir-arrow-up-right"></i>
                         </a>
                     </div>
-                </div>
+                </div> {% endcomment %}
 
                 <div class="news-items d-flex align-items-start">
-
+                    {% for r in random_blogs %}
                     <div class="news-item card-h1">
                         <div class="news-img-box">
-                            <img src="{% static 'assets/imgs/news-6.jpg' %}" alt="News"/>
+                            <img src="{{r.image.url}}" alt="News"/>
                         </div>
                         <div class="news-item-body">
-                            <h5 class="section-subtitle">WEB DEVELOPMENT</h5>
+                            <h5 class="section-subtitle">By {{r.user}}</h5>
                             <h1 class="section-title">
-                                <a href="blog-details.html">New EU battery law could mean EOL for low-cost smartphones</a>
+                                <a href="{% url "core:blog-detail" r.bid %}">{{r.blog_title}}</a>
                             </h1>
-                            <p>Apple might have wriggle room for the iPhone when it comes to new EU laws to make smartphone batteries user replaceable</p>
-                            <ul>
+                            <p>{{r.description|truncatechars:"99"|safe}}</p>
+                            {% comment %} <ul>
                                 <li>
                                     <i class="las la-check"></i> Collaboration Tools
                                 </li>
@@ -131,38 +143,13 @@
                                 <li>
                                     <i class="las la-check"></i> Task Management
                                 </li>
-                            </ul>
-                            <a href="blog-details.html" class="theme-btn">
+                            </ul> {% endcomment %}
+                            <a href="{% url "core:blog-detail" r.bid %}" class="theme-btn">
                                 <i class="icon-right iconoir-arrow-up-right"></i>
                             </a>
                         </div>
                     </div>
-                    <div class="news-item card-h1">
-                        <div class="news-img-box">
-                            <img src="{% static 'assets/imgs/news-7.jpg' %}" alt="News"/>
-                        </div>
-                        <div class="news-item-body">
-                            <h5 class="section-subtitle">CLOUD COMPUTING</h5>
-                            <h1 class="section-title">
-                                <a href="blog-details.html">FTC reported to be investigating OpenAI for consumer protection violations</a>
-                            </h1>
-                            <p>OpenAI is reportedly under additional legal scrutiny, as the US Federal Trade asks the company to give detailed explanations</p>
-                            <ul>
-                                <li>
-                                    <i class="las la-check"></i> Collaboration Tools
-                                </li>
-                                <li>
-                                    <i class="las la-check"></i> Smart Reminders
-                                </li>
-                                <li>
-                                    <i class="las la-check"></i> Requirement
-                                </li>
-                            </ul>
-                            <a href="blog-details.html" class="theme-btn">
-                                <i class="icon-right iconoir-arrow-up-right"></i>
-                            </a>
-                        </div>
-                    </div>
+                    {% endfor %}
 
                 </div>
 

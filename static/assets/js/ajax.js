@@ -51,7 +51,7 @@ $(document).ready(function(){
             data: $(this).serialize(),
             success: function(response) {
                 if (response.success) {
-         
+                    $('#loginBtn').prop('disabled', true).html('Logged in ✔');
                     window.location.href = '/';  
                 } else {
                     // Login failure
@@ -59,6 +59,7 @@ $(document).ready(function(){
                     setTimeout(() => {
                         $("#LoginErrorMessage").text("");
                     }, 4000);
+                    $('#loginBtn').prop('disabled', false).html('Invalid credentials');
                 }
             },
             error: function(error) {
@@ -66,10 +67,10 @@ $(document).ready(function(){
                 
                 
             },
-            complete: function() {
+            // complete: function() {
      
-                $('#loginBtn').prop('disabled', false).html('Login');
-            }
+            //     $('#loginBtn').prop('disabled', false).html('Login');
+            // }
         });
     });
     $('#ContactForm').on('submit', function(e) {
@@ -156,6 +157,45 @@ $(document).ready(function(){
             }
         })
     })
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    $('.mark-as-read-btn').click(function(e) {
+        e.preventDefault();
+        var blogId = $(this).data('blog-id');
+        var csrftoken = getCookie('csrftoken');
+        $('.mark-as-read-btn').prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
+        $.ajax({
+            type: 'POST',
+            url: '/mark-blog-as-read/',
+            data: {'blog_id': blogId},
+            dataType: 'json',
+            headers: {'X-CSRFToken': csrftoken},
+            success: function(response) {
+                if (response.success) {
+                    $('.mark-as-read-btn').prop('disabled', false).html('Read ✔');
+                    // Optionally, update UI to reflect the change
+                } else {
+                    $('.mark-as-read-btn').prop('disabled', false).html('Failed to mark');
+                }
+            },
+            error: function(xhr, status, error) {
+                
+            }
+        });
+    });
 })
 
 

@@ -10,7 +10,6 @@ import resend
 import threading
 
 
-
 resend.api_key = getattr(settings, 'SENSITIVE_VARIABLE', None)
 
 
@@ -230,10 +229,12 @@ def search_view(request):
 
 
 def blog_detail_view(request, bid):
-    
+    main_blog_id = bid
+    random_blogs = Blog.objects.exclude(bid=main_blog_id).exclude(bid=bid).order_by('?')[:2]
     blog = Blog.objects.get(bid=bid)
     context = {
         "blog": blog,
+        "random_blogs": random_blogs,
     }
     return render(request, "core/blog-details.html", context)
 
@@ -262,3 +263,16 @@ def event_detail_view(request, eid):
 
 def about_view(request):
     return render(request, "core/about.html")
+
+def mark_blog_as_read(request):
+    if request.method == 'POST' and  request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
+        blog_id = request.POST.get('blog_id')
+        try:
+            blog = Blog.objects.get(id=blog_id)
+            blog.read = True
+            blog.save()
+            return JsonResponse({'success': True})
+        except Blog.DoesNotExist:
+            return JsonResponse({'success': False, 'error': 'Blog not found'})
+    else:
+        return JsonResponse({'success': False, 'error': 'Invalid request'})

@@ -13,7 +13,7 @@ def user_directory_path(instance, filename):
 
 class Blog(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    bid = ShortUUIDField(unique=True, length=10, max_length=30, prefix="", alphabet="abcdefgh12345") 
+    bid = ShortUUIDField(unique=True, length=10, max_length=45, prefix="", alphabet="abcdefgh12345") 
     blog_title = models.CharField(max_length=100, default="blog")
     image = models.ImageField(upload_to=user_directory_path, default="blog-img.jpg")
     blog_page_image = models.ImageField(upload_to=user_directory_path, default="blog-img.jpg")
@@ -21,11 +21,12 @@ class Blog(models.Model):
     description = RichTextUploadingField(null=True, blank=True, default="Case study ")
     date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     featured = models.BooleanField(default=False)
+    read = models.BooleanField(default=False)
     def blog_image(self):
         return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
     def save(self, *args, **kwargs):
         # Generate a shorter version of the blog title
-        shortened_title = self.blog_title[:20]  # You can adjust the length as needed
+        shortened_title = self.blog_title[:40]  # You can adjust the length as needed
         # Convert the shortened title to a slug
         slug = slugify(shortened_title)
         # Set the bid to the slug
