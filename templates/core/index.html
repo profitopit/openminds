@@ -2,7 +2,7 @@
 {% load static %}
 {% block metaTags %}
 <meta name="description" content="Welcome to OpenmindsInc. Solving problems and Research is what we do.">
-<meta name="keywords" content="OpenmindsInc, business, services, solutions, company, homepage"> 
+<meta name="keywords" content="Openminds Inc, business, services, solutions, company, homepage"> 
 {% endblock metaTags %}
 {% block title %}Welcome to OpenmindsInc{% endblock title %}
 {% block MainContent %}
@@ -14,7 +14,7 @@
                     <div class="hero-empowerment-left-content">
                         <h5 class="section-subtitle">HAVEN OF POSSIBILITIES</h5>
                         <h1 class="section-title fade-in">Solving problems and Research is what we do.</h1>
-                        <p>We offer tailored solutions to empower your endeavors.</p>
+                        <p>We offer tailored solutions to empower your endeavors at Openminds Inc.</p>
                         <div class="btns-group d-flex">
                             <a href="{% url "userauths:sign-up" %}" class="theme-btn">Join Us</a>
                             <a href="{% url "core:contact" %}" class="theme-btn2">Let's Talk
@@ -225,7 +225,7 @@
                     <div class="service2-header d-flex align-items-center justify-content-between w-full">
                         <div class="left">
                             <h5 class="section-subtitle">OUR SERVICES</h5>
-                            <h1 class="section-title">What we do at OpenmindsInc</h1>
+                            <h1 class="section-title">What we do at Openminds Inc</h1>
                             <p>Empowering Growth with Innovative Solutions.</p>
                         </div>
                     </div>
@@ -316,7 +316,7 @@
 
                     <div class="about2-header">
                         <h5 class="section-subtitle">SPECIALIZATION</h5>
-                        <h1 class="section-title">What should we do for you</h1>
+                        <h1 class="section-title">What should Openminds Inc do for you</h1>
                     </div>
                     
                     <ul class="nav nav-tabs about2-tabs" role="tablist">
@@ -417,7 +417,7 @@
                                         <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-4.svg' %}" alt="Icon"/></span> Transforming Goals Into Reality
                                     </h1>
                                     <div class="content">
-                                        <p>Open Mind Inc. are ever ready to plan and carry out projects, we are open for contracts and project study as we are connected to professionals for your tasks</p>
+                                        <p>OpenMinds Inc. are ever ready to plan and carry out projects, we are open for contracts and project study as we are connected to professionals for your tasks</p>
                                        
                                     </div>
                                     <a href="#contactSection" class="theme-btn">
@@ -632,7 +632,7 @@
 
 
         <!-- News -->
-        {% if blog %}
+        {% if blogs %}
         <section class="news2-area">
             <div class="custom-container">
                 <div class="section-header d-flex align-items-center justify-content-between">
@@ -666,7 +666,7 @@
                     </div>
                     {% endfor %}
                 </div>
-
+                {% if events %}
                 <div class="news2-sticky news2-card d-flex card-h">
                     {% for event in events %}
                     <img src="{% static 'assets/imgs/bg-shape-blog-sticky.svg' %}" alt="Shape" class="bg-shape"/>
@@ -684,6 +684,7 @@
                     </div>
                     {% endfor %}
                 </div>
+                {% endif %}
 
             </div>
         </section>
