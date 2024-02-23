@@ -14,11 +14,12 @@
                                 knowledge and inspiration</h1>
                             <p class="mb-5">Stay connected with us by subscribing to our blog updates. By doing so, <br>
                                 you'll receive notifications whenever we publish new articles.</p>
-                                {% comment %} <form class="search-box"  action="{% url 'core:search' %}"  method="GET">
+                                
+                                <form class="search-box"  action="{% url 'core:search' %}"  method="GET">
                                     <input type="text" name="q" placeholder="Search blogs"/>
                                     <button type="reset"></button>
-                                </form> {% endcomment %}
-                                <form  action="{% url 'core:search' %}" class="search-box2" id="search-box2" method="GET">
+                                </form>
+                                {% comment %} <form  action="{% url 'core:search' %}" class="search-box2" id="search-box2" method="GET">
                                     <div class="group">
                                   
                                             <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" id="search-icon-svg" style="cursor: pointer;">
@@ -31,7 +32,7 @@
                                             <input placeholder="Search blogs" name="q" type="search" class="input">
                                         
                                     </div>
-                                </form>
+                                </form> {% endcomment %}
                                 <script>
                                     document.getElementById('search-icon-svg').addEventListener('click', function() {
                                         document.getElementById('search-box2').submit();

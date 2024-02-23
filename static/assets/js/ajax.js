@@ -172,8 +172,7 @@ $(document).ready(function(){
         }
         return cookieValue;
     }
-    $('.mark-as-read-btn').click(function(e) {
-        e.preventDefault();
+    $('.mark-as-read-btn').click(function() {
         var blogId = $(this).data('blog-id');
         var csrftoken = getCookie('csrftoken');
         $('.mark-as-read-btn').prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
