@@ -1,93 +1,81 @@
 $(document).ready(function(){
-    $('#registerBtn').on('click', function(e) {
+    $("#checkboxError").text("");
+    $("#radioError").text("");
+    $("#messageError").text("");
+    
+    $('#bookingForm').on('submit', function(e) {
+        e.preventDefault();
+        $('#checkboxError').text("");
+        $('#radioError').text("");
+        $('#messageError').text("");
+        if (validateForm()) {
+            $('#bookingBtn').prop('disabled', true).html('<span class="spinner-border text-white spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...');
         
-        // Disable the button and show loading state
-        $('#registerBtn').prop('disabled', true).html('<span class="spinner-border text-white spinner-border-sm" role="status" aria-hidden="true"></span> Registering...');
-    
-        // $.ajax({
-        //     type: 'POST',
-        //     url: '/user/sign-up/',  // Update with your register view URL
-        //     data: $(this).serialize(),
-        //     success: function(response) {
-        //         if (response.success) {
-        //             // Registration success
-        //             window.location.href = '/';
-        //             // You may want to redirect or update the page content here
-        //         } else {
-        //             // Registration failure
-                    
-        //             const errorObj = JSON.parse(response.errors);
-                
+            $.ajax({
+                type: 'POST',
+                url: '',  
+                data: $(this).serialize(),
+                success: function(response) {
+                    if (response.success) {
 
-        //             const message = (errorObj.username && errorObj.username[0].message) || (errorObj.email && errorObj.email[0].message);
-        //             if (message === undefined){
-        //                 $("#SignUpErrorMessage").html(`<span class="text-danger" id="LoginErrorMessage">Input a secure password</span>`);
-        //                 setTimeout(() => {
-        //                     $("#SignUpErrorMessage").text("");
-        //                 }, 5000);
-        //             }else{
+                        window.location.href = '/';
+                    
+                    } else {
+
                         
-        //                 $("#SignUpErrorMessage").html(`<span class="text-danger" id="LoginErrorMessage"> ${message}</span>`);
-        //                 setTimeout(() => {
-        //                     $("#SignUpErrorMessage").text("");
-        //                 }, 5000);
-        //             }
-        //         }
-        //     },
-        //     error: function(error) {
-        //         // Handle error
+                        
+                    }
+                },
+                error: function(error) {
+                    
                 
-        //         // Clear the error message
-               
-        //     },
-        //     complete: function() {
-        //         // Re-enable the button and restore its original text
-        //         $('#registerBtn').prop('disabled', false).html('Register');
-        //     }
-        // });
+                },
+                complete: function() {
+                
+                    $('#bookingBtn').prop('disabled', false).html('Submit');
+                }
+            });
+        }
     });
-    
+        
 
     // AJAX for login
     $('#loginForm').on('submit', function(e) {
         e.preventDefault();
-        
-        // Disable the button and show loading state
+
         $('#loginBtn').prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Logging in...');
     
         $.ajax({
             type: 'POST',
-            url: '/user/sign-in/',  // Update with your login view URL
+            url: '/user/sign-in/',  
             data: $(this).serialize(),
             success: function(response) {
                 if (response.success) {
-                    // Login success
-                    
-                    // Redirect to the user profile page
-                    window.location.href = '/';  // Update with the actual URL
+                    $('#loginBtn').prop('disabled', true).html('Logged in ✔');
+                    window.location.href = '/';  
                 } else {
                     // Login failure
                     $("#LoginErrorMessage").text(response.message);
                     setTimeout(() => {
                         $("#LoginErrorMessage").text("");
                     }, 4000);
+                    $('#loginBtn').prop('disabled', false).html('Invalid credentials');
                 }
             },
             error: function(error) {
                 // Handle error
-                console.log(error.responseText);
+                
                 
             },
-            complete: function() {
-                // Re-enable the button and restore its original text
-                $('#loginBtn').prop('disabled', false).html('Login');
-            }
+            // complete: function() {
+     
+            //     $('#loginBtn').prop('disabled', false).html('Login');
+            // }
         });
     });
     $('#ContactForm').on('submit', function(e) {
         e.preventDefault();
-        
-        // Disable the button and show loading state
+ 
         $('#contactSubmit').prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...');
     
         $.ajax({
@@ -114,12 +102,12 @@ $(document).ready(function(){
                 }
             },
             error: function(error) {
-                // Handle error
-                console.log(error.errors);
+                
+             
                 
             },
             complete: function() {
-                // Re-enable the button and restore its original text
+                
                 $('#contactSubmit').prop('disabled', false).html('Submit');
             }
         });
@@ -147,7 +135,7 @@ $(document).ready(function(){
                         _html +='<h1>'+res.context.title+'</h1>'
                         _html +='<p>'+res.context.review+'</p>'
                         _html += '<div class="author-box d-flex align-items-center">'
-                        _html +='<svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.75988 19.8248C6.9173 17.5547 9.27709 16 12 16C14.7019 16 17.0462 17.5308 18.2131 19.7723M14.3333 10.4444C14.3333 11.7945 13.2389 12.8889 11.8889 12.8889C10.5389 12.8889 9.44444 11.7945 9.44444 10.4444C9.44444 9.09442 10.5389 8 11.8889 8C13.2389 8 14.3333 9.09442 14.3333 10.4444ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>'
+                        _html +='<img src="static/assets/imgs/testimonial-1.jpg" alt="Testimonial"/>'
     
                         _html +='<div class="author-box-content">'
                         _html +='<h4>'+res.context.user+'</h4>'
@@ -169,7 +157,106 @@ $(document).ready(function(){
             }
         })
     })
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    $('.mark-as-read-btn').click(function() {
+        var blogId = $(this).data('blog-id');
+        var csrftoken = getCookie('csrftoken');
+        $('.mark-as-read-btn').prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
+        $.ajax({
+            type: 'POST',
+            url: '/mark-blog-as-read/',
+            data: {'blog_id': blogId},
+            dataType: 'json',
+            headers: {'X-CSRFToken': csrftoken},
+            success: function(response) {
+                if (response.success) {
+                    $('.mark-as-read-btn').prop('disabled', false).html('Read ✔');
+                    // Optionally, update UI to reflect the change
+                } else {
+                    $('.mark-as-read-btn').prop('disabled', false).html('Failed to mark');
+                }
+            },
+            error: function(xhr, status, error) {
+                
+            }
+        });
+    });
 })
+
+
+
+
+
+
+
+
+function validateForm() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"][name="company_needs"]');
+    var radios = document.querySelectorAll('input[type="radio"][name="company_type"]');
+    var checkedCheckbox = false;
+    var checkedRadio = false;
+    var checkboxError = document.getElementById('checkboxError');
+    var radioError = document.getElementById('radioError');
+    var messageError = document.getElementById('messageError');
+    var messageField = document.getElementById('message');
+    var submitButton = document.getElementById('bookingBtn');
+    
+    checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            checkedCheckbox = true;
+        }
+    });
+    
+    radios.forEach(function(radio) {
+        if (radio.checked) {
+            checkedRadio = true;
+        }
+    });
+    if (!checkedRadio) {
+        radioError.textContent = "Please select a company type.";
+        return false; // Prevent form submission
+    } else {
+        radioError.textContent = ""; // Clear error message
+    }
+    
+    if (!checkedCheckbox) {
+        checkboxError.textContent = "Please check at least one option for company needs.";
+        return false; // Prevent form submission
+    } else {
+        checkboxError.textContent = ""; // Clear error message
+    }
+    
+   
+
+    if (messageField.value.trim() === '' || messageField.value.length < 10) {
+        messageError.textContent = "Please enter a message with at least 10 characters.";
+        return false; // Prevent form submission
+    } else {
+        messageError.textContent = ""; // Clear error message
+    }
+    
+    // Enable the submit button
+    submitButton.disabled = false;
+    
+    return true; // Allow form submission
+}
+
+
+
 
 
 
