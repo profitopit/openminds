@@ -18,7 +18,15 @@ $(document).ready(function(){
                 success: function(response) {
                     if (response.success) {
 
-                        window.location.href = '/';
+                        function showNotification() {
+                            var notification = document.getElementById("notification");
+                            notification.style.display = "block";
+                            
+                            setTimeout(function() {
+                                notification.style.display = "none";
+                            }, 4000); 
+                        }
+                        showNotification();
                     
                     } else {
 
@@ -51,7 +59,19 @@ $(document).ready(function(){
             data: $(this).serialize(),
             success: function(response) {
                 if (response.success) {
-                    $('#loginBtn').prop('disabled', true).html('Logged in ✔');
+                    $('#loginBtn').prop('disabled', true).html('Logging in ✔');
+                    if (response.success) {
+
+                        function showNotification() {
+                            var notification = document.getElementById("notification");
+                            notification.style.display = "block";
+                            
+                            setTimeout(function() {
+                                notification.style.display = "none";
+                            }, 4000); 
+                        }
+                        showNotification();
+                    }
                     window.location.href = '/';  
                 } else {
                     // Login failure
@@ -84,10 +104,15 @@ $(document).ready(function(){
             data: $(this).serialize(),
             success: function(response) {
                 if (response.success) {
-                    $("#ContactErrorMessage").text('Your message has been successfully received');
-                    setTimeout(() => {
-                        $("#ContactErrorMessage").text("");
-                    }, 5000);
+                    function showNotification() {
+                        var notification = document.getElementById("notification");
+                        notification.style.display = "block";
+                        
+                        setTimeout(function() {
+                            notification.style.display = "none";
+                        }, 4000); 
+                    }
+                    showNotification();
                 } else {
                     // Submit failure
                     const errorObj = JSON.parse(response.errors);
@@ -119,7 +144,7 @@ $(document).ready(function(){
     
         $.ajax({
             data: $(this).serialize(),
-    
+        
             method: $(this).attr("method"),
             url: $(this).attr("action"),
             dataType: "json",

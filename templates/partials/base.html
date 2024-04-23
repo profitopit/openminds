@@ -16,7 +16,7 @@
     <meta property="og:url" content="http://{{request.META.HTTP_HOST}}{{request.path}}">
     <meta property="og:title" content="OpenmindsInc">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="http://{{request.META.HTTP_HOST}}{% static "assets/logo/openminds-full.png" %}">
+    <meta property="og:image" content="http://{{request.META.HTTP_HOST}}{% static "assets/logo/openminds-full-small.png" %}">
     <meta property="twitter:image" content="http://{{request.META.HTTP_HOST}}{% static "assets/logo/openminds-full-small.png" %}">
     <meta property="og:description" content="Solving problems and Research is what we do.">
     <script type="application/ld+json">
@@ -67,24 +67,71 @@
     <!-- ========== End Stylesheet ========== -->
 
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-435W8J1NK3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-435W8J1NK3');
-</script>
+
 
 <body>
 
     <!-- Main -->
 
     <main class="main-page homepage2">
+       
+        <div class="" style="position: sticky; height: 40px;">
+            <!-- Notification Section -->
+            <div class="marquee-container">
+                <marquee behavior="scroll" direction="up" scrollamount="0" class="main-marquee">
+                    <!-- Your notification content here -->
+                    <span class="notification-marque bounce-in delay-2">{{notification|truncatechars:"35"}}</span>
+                </marquee>
+            </div>
+            <!-- Navbar Brand and Links -->
+            <!-- Add your navbar brand and links here -->
+        </div>
+        <style>
+            .marquee-container {
+                width: 100%;
+                
+                overflow: hidden;
+                
+            }
+            
+            .notification-marque {
+                display: inline-block;
+                padding: 5px 10px;
+                font-weight: 700;
+                
+            }
+            .main-marquee{
+                align-items: center;
+                justify-content: center;
+                display: flex;
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            var headerNavLinks = document.querySelector('.header-area.header-2'); // Adjust the selector if necessary
+            var threshold = 50; // Adjust this value as needed
 
+            function updateHeaderPadding() {
+                if (headerNavLinks) { // Check if headerNavLinks is defined
+                    if (window.scrollY <= threshold) {
+                        headerNavLinks.style.paddingTop = '50px'; // Adjust the paddingTop value as needed
+                    } else {
+                         headerNavLinks.style.paddingTop = '15px';// Adjust the paddingTop value as needed
+                    }
+                }
+            }
+
+            updateHeaderPadding();
+
+            window.addEventListener('scroll', function() {
+                updateHeaderPadding();
+            });
+        });
+
+          </script>
         <!-- Header -->
-        <header class="header-area header-2">
+        <header class="header-area header-2 ">
 
             <div class="custom-container">
                 <div class="custom-row align-items-center justify-content-between">
@@ -103,24 +150,26 @@
                                 <i class="las la-bars"></i>
                             </span>
                         </div>
+                        
                         <nav class="navbar-wrapper d-flex align-items-center" >
+                            
                             <span class="close-menu-bar">
                                 <i class="las la-times"></i>
                             </span>
-                            <ul >
-                                <li class="" >
-                                    <a href="/" class="nav-link-color">Home</a>
+                            <ul  id="navbar-wrapper">
+                                <li >
+                                    <a href="/" class="nav-link-color" >Home</a>
                                    
                                     
                                 </li>
                                 <li class="">
-                                    <a href="{% url "core:about" %}" class="nav-link-color">About</a>
+                                    <a href="{% url "core:about" %}" class="nav-link-color" >About</a>
                                    
                                    
                                 </li>
                                 
                                 <li class="mega-menu-item">
-                                    <a  class="nav-link-color" style="cursor: pointer;">Engage</a>
+                                    <a  class="nav-link-color"  style="cursor: pointer;">Engage</a>
                                     <span class="dropdown-menu-item-icon">
                                         <i class="las la-angle-down"></i>
                                     </span>
@@ -168,15 +217,15 @@
                                     </div>
                                 </li>
                                 <li >
-                                    <a href="{% url "core:contact" %}" class="nav-link-color">Contact</a>
+                                    <a href="{% url "core:contact" %}"  class="nav-link-color">Contact</a>
                                 </li>
                                 {% if request.user.is_authenticated %}
                                 <li>
-                                    <a href="{% url "userauths:logout" %}" class="nav-link-color">Logout</a>
+                                    <a href="{% url "userauths:logout" %}"  class="nav-link-color">Logout</a>
                                 </li>
                                 {% else %}
                                 <li>
-                                    <a href="{% url "userauths:sign-in" %}" class="nav-link-color">Sign In</a>
+                                    <a href="{% url "userauths:sign-in" %}"  class="nav-link-color">Sign In</a>
                                 </li>
                                 {% endif %}
                                 {% if request.user.is_authenticated %}
@@ -185,7 +234,7 @@
                                 </li>
                                 {% else %}
                                 <li>
-                                    <a href="{% url "userauths:sign-up" %}" class="nav-link-color">Join Us</a>
+                                    <a href="{% url "userauths:sign-up" %}"  class="nav-link-color">Join Us</a>
                                 </li>
                                 {% endif %}
                              
@@ -232,7 +281,7 @@
                         propel your business forward.</p>
                     <form action="" method="POST" class="subscribe-form">
                         <div class="subscribe-box d-flex">
-                            <input type="email" id="email" name="email" placeholder="Enter Your Email" />
+                            <input type="email" id="subscribe-email" name="email" placeholder="Enter Your Email" />
                             <button id="submit2" class="theme-btn">Get Started</button>
                         </div>
                         <!-- Alert Message -->  
@@ -280,9 +329,9 @@
                     <div class="footer-links">
                         <h3>Our Fields</h3>
                         <ul>
-                            <li><a href="">Education</a></li>
-                            <li><a href="">Healthcare</a></li>
-                            <li><a href="">Banks</a></li>
+                            <li><a href="">WeGrow</a></li>
+                            <li><a href="">WeTeach</a></li>
+                            <li><a href="">More</a></li>
  
                         </ul>
                     </div> 
@@ -297,12 +346,12 @@
                 </div>
 
                 <div class="footer-contact-info">
-                    <div class="footer-contact-info-item">
+                    {% comment %} <div class="footer-contact-info-item">
                         <h4>Phone</h4>
                         <p>
                             <a href="tel:+2348089421545">+234-808-9421-545</a>
                         </p>
-                    </div>
+                    </div> {% endcomment %}
                     <div class="footer-contact-info-item">
                         <h4>Mail</h4>
                         <p>
@@ -352,11 +401,8 @@
 <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
 
 <script src="{% static 'assets/js/client-marquee.js' %}"></script>
-<script src="{% static 'assets/js/slideTobook.js' %}"></script>
 <script src="{% static 'assets/js/theme-custom.js' %}"></script>
 <script src="{% static 'assets/js/form2.js' %}"></script>
-<script src="{% static 'assets/js/subscribe-form.js' %}"></script>
-<script src="{% static 'assets/js/theme-worldmap.js' %}"></script>
 <script src="https://cdn.lordicon.com/lordicon.js"></script>
 <script src="//code.tidio.co/zgfzjwgauzf8z8yt6ss3f91sv8wbfzwy.js" async></script>
 </body>

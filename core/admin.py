@@ -1,15 +1,18 @@
 from django.contrib import admin
-from core.models import Review, Blog, BlogImages, Event, EventImages
+from core.models import Review, Blog, BlogImages, Event, EventImages, Notifications
+from django.contrib.auth.models import Group
 
+admin.site.unregister(Group)
 
 admin.site.site_header = 'Openminds Administration'
 
 class BlogImagesAdmin(admin.TabularInline):
     model = BlogImages
 
+
 class BlogAdmin(admin.ModelAdmin):
     inlines = [BlogImagesAdmin]
-    list_display = ['user','image','blog_title', 'featured', 'date','bid']
+    list_display = ['user','blog_image','blog_title', 'featured', 'date','bid']
 
 class EventImagesAdmin(admin.TabularInline):
     model = EventImages
@@ -25,4 +28,4 @@ class ReviewAdmin(admin.ModelAdmin):
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Review, ReviewAdmin)
-
+admin.site.register(Notifications)

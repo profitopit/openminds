@@ -34,6 +34,10 @@
                             <h1 class="section-title">Lets get in touch</h1>
                             <p>You can reach us anytime via <a href="mailto:openmindincofficial@gmail.com">openmindincofficial@gmail.com</a></p>
                             <p class="text-danger" id="ContactErrorMessage" style="border-bottom: none; padding-bottom: 0px;"></p>
+                            <div class="notification" id="notification">
+																
+                                Your message has been successfully received <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12L9 18L21 6" stroke="#1351d8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </div>
                             <form action="" method="POST" class="contact-form" id="ContactForm">
                                 {% csrf_token %}
                                 <div class="input-row">

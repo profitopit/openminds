@@ -7,13 +7,35 @@
 {% block title %}Events - OpenmindsInc{% endblock title %}
 {% block MainContent %}
 
-
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var headerNavLinks = document.querySelectorAll('.nav-link-color');
+      var threshold = 50; // Adjust this value as needed
+    
+      function updateNavLinksColor() {
+        headerNavLinks.forEach(function(link) {
+          if (window.scrollY <= threshold) {
+            link.style.color = "#fff";
+          } else {
+            link.style.color = "#212529";
+          }
+        });
+      }
+    
+      updateNavLinksColor();
+    
+      window.addEventListener('scroll', function() {
+        updateNavLinksColor();
+      });
+    });
+  </script>
+  
        <!-- Event Hero -->
         <section class="hero-service-wrap hero-section-wrap hero-career-wrap hero-event-wrap" >
             <div class="hero-section-content-wrap background-text-img">
                 <img src="{% static 'assets/imgs/bg-shape-1.svg' %}" alt="Shape" class="animation-slide-left bg-shape" />
                 <div class="custom-container">
-                    <div class="hero-portfolio-body">
+                    <div class="hero-portfolio-body pt-5">
                         <div class="hero-section-content text-center">
                             <h5 class="section-subtitle">Events</h5>
                             <h1 class="section-title fade-in">Our mentor teaching everywhere</h1>

@@ -97,6 +97,7 @@
 		$(window).scroll(function () {
 			if ($(window).scrollTop() > 50) {
 				$('.header-2').addClass('is-fixed');
+				
 			} else {
 				$('.header-2').removeClass('is-fixed');
 			}

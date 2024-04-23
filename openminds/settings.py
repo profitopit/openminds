@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-s4r3$a=w27gbvq7@e6#f+4uxm2zz_&5=*ln1s4!ibq(9@4lwu^"
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config("DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = ['*']
 
@@ -64,6 +66,7 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
+                "core.context_processor.default", 
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
@@ -79,13 +82,14 @@ WSGI_APPLICATION = "openminds.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
-        'USER': 'postgres.bqbitfmmuubbnlsaqmjt',
-        'PASSWORD': 'xp6Kn9j93HdylHUv',
-        'HOST': 'aws-0-eu-central-1.pooler.supabase.com',
+        'USER': config("USER"),
+        'PASSWORD': config("PASSWORD"),
+        'HOST': config("HOST"),
         'PORT': '5432',
     }
 }
@@ -133,7 +137,13 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
 
+PIPELINE = {
+    'COMPILERS': ('pipeline.compilers.sass.SASSCompiler',),
+    'CSS_COMPRESSOR': 'pipeline.compressors.yuglify.YuglifyCompressor',
+    'JS_COMPRESSOR': 'pipeline.compressors.yuglify.YuglifyCompressor',
+}
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -141,7 +151,18 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = 'userauths.User'
 
 
-CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+
+
+#Cloudinary Credentials
+CLOUD_NAME = config("CLOUD_NAME")
+API_KEY = config("API_KEY")
+API_SECRET = config("API_SECRET")
+
+SENSITIVE_VARIABLE = config("SENSITIVE_VARIABLE")
+
+CKEDITOR_UPLOAD_PATH =  f'https://api.cloudinary.com/v1_1/{CLOUD_NAME}/image/upload/'
+
 
 CKEDITOR_CONFIGS = {
     'default':{
@@ -151,5 +172,3 @@ CKEDITOR_CONFIGS = {
         'extraPlugins': ','.join(['codesnippet', 'widget', 'dialog','clipboard',]),
     }
 }
-
-SENSITIVE_VARIABLE = "re_3vZfcxaJ_45XDuvLBkraKu6jWq5hGd87Q"

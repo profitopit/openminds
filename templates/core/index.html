@@ -16,15 +16,15 @@
                         <h1 class="section-title fade-in">Solving problems and Research is what we do.</h1>
                         <p>We offer tailored solutions to empower your endeavors at Openminds Inc.</p>
                         <div class="btns-group d-flex">
-                            <a href="{% url "userauths:sign-up" %}" class="theme-btn">Join Us</a>
-                            <a href="{% url "core:contact" %}" class="theme-btn2">Let's Talk
+                            <a href="{% url "userauths:sign-up" %}"  class="theme-btn" id="theme-btn-main">Join Us</a>
+                            <a href="{% url "core:contact" %}" class="theme-btn2" id="theme-btn-main">Let's Talk
                                 <i class="iconoir-arrow-up-right"></i>
                             </a>
                         </div>
                     </div>
 
-                    <div class="hero-empowerment-right-content">
-                        <div class="top-content">
+                    <div class="hero-empowerment-right-content ">
+                        <div class="top-content mt-lg-5 mt-sm-0" >
                             <img class="desktop fade-in" src="{% static 'assets/imgs/bg001.jpg' %}" alt="Empowerment" />
                             <img class="mobile" src="{% static 'assets/imgs/bg1.png' %}" alt="Empowerment" />
 
@@ -84,7 +84,7 @@
 
                 </div>
             </div>
-            <div class="custom-container " id="contactSection">
+            <div class="custom-container my-lg-5" id="contactSection" >
 
                 <div class="hero-contact-form-wrap" >
                     <div class="hero-contact-form-inner-wrap">
@@ -98,7 +98,10 @@
 
                             <div class="hero-contact-form">
                             
-
+                                <div class="notification" id="notification">
+																
+                                    Your message has been successfully received <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12L9 18L21 6" stroke="#1351d8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                </div>
                                 <form method="POST" class="contact-form d-flex" id="bookingForm" onsubmit="return validateForm()">
                                     {% csrf_token %}
                                     <div class="input-main-row">
@@ -323,37 +326,37 @@
                         <li class="nav-item">
                             <button class="nav-link active" id="business_strategy-tab" data-bs-toggle="tab" href="#business_strategy"
                                 role="tab" aria-controls="business_strategy" aria-selected="true">
-                                <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-1.svg' %}" alt="Icon"/></span> Project Management
+                                Project Management
                             </button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link" id="market_analysis-tab" data-bs-toggle="tab" href="#market_analysis" role="tab"
                                 aria-controls="market_analysis" aria-selected="false">
-                                <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-4.svg' %}" alt="Icon"/></span> Research Management
+                                Research Management
                             </button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link" id="process_optimation-tab" data-bs-toggle="tab" href="#process_optimation" role="tab"
                                 aria-controls="process_optimation" aria-selected="false">
-                                <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-6.svg' %}" alt="Icon"/></span> Event Planning/Management
+                                Event Planning/Management
                             </button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link" id="performance_improvement-tab" data-bs-toggle="tab" href="#performance_improvement" role="tab"
                                 aria-controls="performance_improvement" aria-selected="false">
-                                <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-2.svg' %}" alt="Icon"/></span> Educational Consultancy
+                                Educational Consultancy
                             </button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link" id="entrepreneurial_guidance-tab" data-bs-toggle="tab" href="#entrepreneurial_guidance" role="tab"
                                 aria-controls="entrepreneurial_guidance" aria-selected="false">
-                                <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-3.svg' %}" alt="Icon"/></span> Project Monitoring/Supervision
+                               Project Monitoring/Supervision
                             </button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link" id="psychology_guidance-tab" data-bs-toggle="tab" href="#psychology_guidance" role="tab"
                                 aria-controls="psychology_guidance" aria-selected="false">
-                                <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-5.svg' %}" alt="Icon"/></span> Psychological Studies
+                                Psychological Studies
                             </button>
                         </li>
                         
@@ -381,7 +384,7 @@
                                     </div>
 
                                     <h1>
-                                        <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-1.svg' %}" alt="Icon"/></span> Transforming Goals Into Reality
+                                        Transforming Goals Into Reality
                                     </h1>
                                     <div class="content">
                                         <p>Open Mind Inc. are ever ready to plan and carry out projects, we are open for contracts and project study as we are connected to professionals for your tasks</p>
@@ -414,7 +417,7 @@
                                     </div>
 
                                     <h1>
-                                        <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-4.svg' %}" alt="Icon"/></span> Transforming Goals Into Reality
+                                         Transforming Goals Into Reality
                                     </h1>
                                     <div class="content">
                                         <p>OpenMinds Inc. are ever ready to plan and carry out projects, we are open for contracts and project study as we are connected to professionals for your tasks</p>
@@ -447,7 +450,7 @@
                                     </div>
 
                                     <h1>
-                                        <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-6.svg' %}" alt="Icon"/></span> Event Planning/Management
+                                       Event Planning/Management
                                     </h1>
                                     <div class="content">
                                         <p>We also handle well coordinated handling of events making sure that we meet desired operations of our customers</p>
@@ -481,7 +484,7 @@
                                     </div>
 
                                     <h1>
-                                        <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-2.svg' %}" alt="Icon"/></span> Igniting minds, not just classrooms
+                                       Igniting minds, not just classrooms
                                     </h1>
                                     <div class="content">
                                         <p>In Open Minds, we are interested in sessions, interviews and seminar on educational issues and reasonable ways of of solving them with a push for easier learning.</p>
@@ -514,7 +517,7 @@
                                     </div>
 
                                     <h1>
-                                        <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-3.svg' %}" alt="Icon"/></span> Boost accountability, unlock team potential
+                                         Boost accountability, unlock team potential
                                     </h1>
                                     <div class="content">
                                         <p>Just in case of incovenience and incapabiliities of project teams in your organization, we can put in measures to improve disciplines of your project.</p>
@@ -546,7 +549,7 @@
                                     </div>
 
                                     <h1>
-                                        <span class="icon"><img src="{% static 'assets/imgs/hwd-icon-3.svg' %}" alt="Icon"/></span> Boost accountability, unlock team potential
+                                      Boost accountability, unlock team potential
                                     </h1>
                                     <div class="content">
                                         <p>Just in case of incovenience and incapabiliities of project teams in your organization, we can put in measures to improve disciplines of your project.</p>
@@ -638,12 +641,12 @@
                 <div class="section-header d-flex align-items-center justify-content-between">
                     <div class="left">
                         <h5 class="section-subtitle">DAILY NEWS</h5>
-                        <h1 class="section-title">Read more about daily insights</h1>
-                        <p>In a fast-paced world where information shapes, our daily news service is your informed about the latest developments</p>
+                        <h1 class="section-title">Read more about us</h1>
+                        <p>From new product launches to exciting company updates, stay up-to-date with the latest news.</p>
                     </div>
                     
                     <a href="{% url "core:blogs" %}" class="theme-btn">
-                        Learn More 
+                        View More
                         <i class="iconoir-arrow-up-right"></i>
                     </a>
                 </div>

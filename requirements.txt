@@ -11,3 +11,5 @@ resend==0.6.0
 django-pipeline== 2.1.0
 django-taggit==4.0.0
 django-ckeditor==6.7.0
+cloudinary==1.39.
+python-decouple==3.8

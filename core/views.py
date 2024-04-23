@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import Review, Blog, Event
+from core.models import Review, Blog, Event, Notifications
 from userauths.forms import ContactForm, BookingForm
 from core.forms import ReviewForm
 from django.contrib import messages
