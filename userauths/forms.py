@@ -20,7 +20,7 @@ class ContactForm(forms.ModelForm):
     first_name = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Your Name","class": "form-control","id":"first_name"}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Your Name","class": "form-control","id":"last_name"}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={"placeholder": "Your Email", "class": "form-control ","id":"email"}))
-    country = forms.ChoiceField(choices=COUNTRIES, widget=forms.Select(attrs={"class": "form-control ","id":"homeland"}))
+    country = forms.ChoiceField(choices=COUNTRIES, widget=forms.Select(attrs={"class": "form-control-country ","id":"homeland"}))
     message = forms.CharField(widget=forms.Textarea(attrs={"id":"message","placeholder": "Leave us a message...."}), validators=[MinLengthValidator(15, message='Please enter at least 15 characters')])
     
     class Meta:
