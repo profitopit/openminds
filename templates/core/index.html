@@ -662,7 +662,7 @@
                                 {% comment %} <a href="blog-details.html" class="category">#Travel</a> {% endcomment %}
                             </div>
                             <h2><a href="{% url "core:blog-detail" blog.bid %}">{{blog.blog_title}}</a></h2>
-                            <p>{{blog.description|truncatechars:"120"|safe}}</p>
+                            <p>{{blog.description|truncatechars:"80"|safe}}</p>
                             <a href="{% url "core:blog-detail" blog.bid %}" class="theme-btn">
                                 <i class="iconoir-arrow-up-right"></i>
                             </a>
